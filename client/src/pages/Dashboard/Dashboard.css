@@ -1,0 +1,33 @@
+#rent {
+    background-color: rgb(63, 191, 191);
+    border: 2px solid black;
+  }
+  #util {
+    background-color: rgb(191, 127, 63);
+    border: 2px solid black;
+  }
+  #car {
+    background-color: rgb(63, 63, 191);
+    border: 2px solid black;
+  }
+  #food {
+    background-color: rgb(63, 191, 63);
+    border: 2px solid black;
+  }
+  #credit {
+    background-color: rgb(191, 63, 191);
+    border: 2px solid black;
+  }
+  #loan {
+    background-color: rgb(191, 191, 63);
+    border: 2px solid black;
+  }
+  #medical {
+    background-color: rgb(191, 63, 63);
+    border: 2px solid black;
+  }
+  #other {
+    background-color: rgb(127, 63, 191);
+    border: 2px solid black;
+  }
+  
