@@ -1,4 +1,4 @@
-##Deliverable 1 
+# Deliverable 1 
 ### Project Overview
 BillsBuster is an app intended to make keeping track of bills much easier. By allowing a user to store all their billing information in one safe place, they can more easily keep an organized history. This practical app may seem simple, but being able to easily keep track of all the bills could help prevent a user from missing payments in their busy life, keep track of their money, and reduce the physical clutter needed for storing paper statements.
 
