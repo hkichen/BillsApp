@@ -4,8 +4,7 @@ const User = require('../models').User;
 //These methods ONLY respond with a json
 module.exports = {
   findAll: function(req, res) {
-    User.find(req.query)
-    .then(dbUser => res.json(dbUser))
+    User.all().then(dbUser => res.json(dbUser))
     .catch(err => res.status(422).json(err));
   },
   findById: function(req, res) {

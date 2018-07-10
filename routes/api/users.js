@@ -16,7 +16,9 @@ const User = require('../../models').User;
 router.get('/:userId', function(req, res, next) {
   res.json(users.find((user) => user.id === req.params.userId));
 });
-
+//create a new user route
 router.post('/', userController.create);
+
+//find all users
 router.get('/', userController.findAll);
 module.exports = router;
