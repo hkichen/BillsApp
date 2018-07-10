@@ -38,4 +38,18 @@ July 3: Deliverable 1 due
 ![mockup3](https://github.com/hkichen/Project3/blob/master/app/assets/github/mockup-3.png)
 
 -----------------------------------------------------
+# Deliverable 2
+
+We hit a couple of unrecoverable snags and had to start an entirely new repo and write everything from scratch. 
+
+## Trello Board 
+
+![trello3](https://github.com/hkichen/Project3/blob/master/app/assets/github/trello3.PNG)
+
+![trello4](https://github.com/hkichen/Project3/blob/master/app/assets/github/trello4.PNG)
+
+--------------------------------------------------------
+
+
+
 
