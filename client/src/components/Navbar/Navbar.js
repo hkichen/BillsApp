@@ -8,28 +8,27 @@ import Signup from '../../pages/Signup';
 
 
 class Navbar extends Component {
-    render() {
-      return (
-        <Router>
-          <div className="navbar">
-            <ul>
-              <li><Link to="/"> Landing </Link></li>
-              <li><Link to="/dashboard"> Dashboard </Link></li>
-              <li><Link to="/users"> Users </Link></li>
-              <li><Link to="/signup"> Sign Up </Link></li>
-            </ul>
+  render() {
+    return (
+      <Router>
+        <div className="navbar">
+          <ul>
+            <li><Link to="/"> Landing </Link></li>
+            <li><Link to="/dashboard"> Dashboard </Link></li>
+            <li><Link to="/users"> Users </Link></li>
+            <li><Link to="/signup"> Sign Up </Link></li>
+          </ul>
   
-            <hr/>
+          <hr/>
   
-            <Route exact path="/" component={Landing}/>
-            <Route exact path="/dashboard" component={Dashboard}/>
-            <Route exact path="/users" component={Users}/>
-            <Route exact path="/users/:id" component={User}/>
-            <Route exact path="/signup" component={Signup} />
-          </div>
-        </Router>
-      );
-    }
+          <Route exact path="/" component={Landing}/>
+          <Route exact path="/dashboard" component={Dashboard}/>
+          <Route exact path="/users" component={Users}/>
+          <Route exact path="/users/:id" component={User}/>
+          <Route exact path="/signup" component={Signup} />
+        </div>
+      </Router>
+    );
   }
 }
 export default Navbar;
