@@ -13,9 +13,8 @@ const User = require('../../models').User;
 //   res.json(users);
 // });
 
-router.get('/:userId', function(req, res, next) {
-  res.json(users.find((user) => user.id === req.params.userId));
-});
+router.get('/:id', userController.findById);
+
 //create a new user route
 router.post('/', userController.create);
 

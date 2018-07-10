@@ -7,8 +7,6 @@ import Dashboard from '../../pages/Dashboard';
 import Signup from '../../pages/Signup';
 
 
-
-
 class Navbar extends Component {
     render() {
       return (
