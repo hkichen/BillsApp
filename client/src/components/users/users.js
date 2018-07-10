@@ -19,7 +19,6 @@ class Users extends Component {
       fetch('/api/users')
         .then(res => res.json())
         .then(users => this.setState({users: users}));
-      // this.setState({users: [{id:'5', name: 'John'}]})
     }
   
     render() {
