@@ -8,8 +8,17 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      title: {
-        type: Sequelize.STRING
+      category: {
+        type: Sequelize.STRING,
+        notEmpty: true
+      },
+      avgAmount: {
+        type: Sequelize.DECIMAL(10, 2),
+        notEmpty: true
+      },
+      description: {
+        type: Sequelize.TEXT,
+        notEmpty: true
       },
       createdAt: {
         allowNull: false,

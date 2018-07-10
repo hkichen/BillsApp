@@ -22,7 +22,11 @@ module.exports = {
       },
       moneySource: {
         type: Sequelize.STRING,
-        notEmpty: true,
+        notEmpty: true
+      },
+      autoPay: {
+        type: Sequelize.BOOLEAN,
+        notEmpty: true
       },
       createdAt: {
         allowNull: false,
