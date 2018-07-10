@@ -4,6 +4,7 @@ import Landing from '../../pages/Landing';
 import Users from '../users/users';
 import User from '../users/user';
 import Dashboard from '../../pages/Dashboard';
+import Signup from '../../pages/Signup';
 
 
 
@@ -17,6 +18,7 @@ class Navbar extends Component {
               <li><Link to="/"> Landing </Link></li>
               <li><Link to="/dashboard"> Dashboard </Link></li>
               <li><Link to="/users"> Users </Link></li>
+              <li><Link to="/signup"> Sign Up </Link></li>
             </ul>
   
             <hr/>
@@ -25,6 +27,7 @@ class Navbar extends Component {
             <Route exact path="/dashboard" component={Dashboard}/>
             <Route exact path="/users" component={Users}/>
             <Route exact path="/users/:id" component={User}/>
+            <Route exact path="/signup" component={Signup} />
           </div>
         </Router>
       );

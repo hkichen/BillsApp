@@ -8,7 +8,9 @@ class Users extends Component {
       super(props);
       this.state = {
         users: [{
-          id: "1", firstName: "Beau"
+          id: "",
+          firstName: "",
+          lastName: ""
         }]
       };
     }
@@ -25,7 +27,7 @@ class Users extends Component {
         <ul>
           {
             this.state.users.map((user) => (
-              <li key={user.id}><Link to={this.props.match.url + "/" + user.id}>{user.firstName}</Link></li>
+              <li key={user.id}><Link to={this.props.match.url + "/" + user.id}>{user.firstName} {user.lastName}</Link></li>
             ))
           }
         </ul>
