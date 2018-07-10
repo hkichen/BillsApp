@@ -21,10 +21,6 @@ module.exports = (sequelize, DataTypes) => {
       validate: {
         notEmpty: true,
       }
-    },
-    status: {
-      type: DataTypes.ENUM('active', 'inactive'),
-      defaultValue: 'active'
     }
   });
   
