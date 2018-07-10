@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class User extends Component {
   constructor(props) {
     super(props);
-    this.state = {id: "", name: ""};
+    this.state = {id: "", fistName: ""};
   }
 
   componentDidMount() {
@@ -14,7 +14,7 @@ class User extends Component {
 
   render() {
     return (
-      <div>Name: {this.state.name}</div>
+      <div>Name: {this.state.firstName}</div>
     );
   }
 }

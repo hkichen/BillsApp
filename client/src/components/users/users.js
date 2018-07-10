@@ -6,7 +6,11 @@ import { Link } from 'react-router-dom';
 class Users extends Component {
     constructor(props) {
       super(props);
-      this.state = {users: [{id: "1", name: "Beau"}]};
+      this.state = {
+        users: [{
+          id: "1", firstName: "Beau"
+        }]
+      };
     }
   
     componentDidMount() {
@@ -21,7 +25,7 @@ class Users extends Component {
         <ul>
           {
             this.state.users.map((user) => (
-              <li key={user.id}><Link to={this.props.match.url + "/" + user.id}>{user.name}</Link></li>
+              <li key={user.id}><Link to={this.props.match.url + "/" + user.id}>{user.firstName}</Link></li>
             ))
           }
         </ul>
