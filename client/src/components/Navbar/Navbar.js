@@ -5,6 +5,8 @@ import Users from '../users/users';
 import User from '../users/user';
 import Dashboard from '../../pages/Dashboard';
 import AddExpense from '../../pages/AddExpense';
+import Statement from '../../components/Statement';
+import StatementInfo from '../../components/StatementInfo';
 
 class Navbar extends Component {
   render() {
@@ -21,6 +23,9 @@ class Navbar extends Component {
             <li>
               <Link to="/users"> Users </Link>
             </li>
+            <li>
+              <Link to="/statements">Statements</Link>
+            </li>
           </ul>
 
           <hr />
@@ -30,6 +35,7 @@ class Navbar extends Component {
           <Route exact path="/addexpense" component={AddExpense} />
           <Route exact path="/users" component={Users} />
           <Route exact path="/users/:id" component={User} />
+          <Route exact path="/statements" component={Statement} />
         </div>
       </Router>
     );
