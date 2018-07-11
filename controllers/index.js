@@ -1,5 +1,7 @@
+const users = require('./userController');
 const expenses = require('./expenseController');
 
 module.exports = {
-  expenses
+    users,
+    expenses
 };

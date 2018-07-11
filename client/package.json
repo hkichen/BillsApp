@@ -2,7 +2,12 @@
   "name": "bills-client",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "npm": "5.7.1",
+    "node": "9.5.0"
+  },
   "dependencies": {
+    "axios": "^0.18.0",
     "chart.js": "^2.7.2",
     "react": "^16.2.0",
     "react-bootstrap": "^0.32.1",

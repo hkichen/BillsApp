@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 
-//home route
+//home api route
 router.get('/', function(req, res, next) {
   res.json({ title: "Express Server side api data" });
 });
