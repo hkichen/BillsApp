@@ -19,6 +19,16 @@ if (config.use_env_variable) {
   );
 }
 
+if(process.env.JAWSDB_URL) {
+  sequelize = new Sequelize(process.env.HEROKU_MYSQL_JAWSDB_URL, {
+    dialect:  'mysql',
+    protocol: 'mysql',
+    port:     match[4],
+    host:     match[3],
+    logging:  true //false
+  })
+}
+
 fs.readdirSync(__dirname)
   .filter(file => {
     return (
