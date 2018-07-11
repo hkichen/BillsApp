@@ -1,10 +1,10 @@
 var express = require('express');
 var router = express.Router();
+var app = express();
 
-
-//home route
-router.get('/', function(req, res, next) {
-  res.json({ title: "Express Server side api data" });
+//home api route
+app.get("/", (req, res, next) => {
+  res.sendFile(path.join(__dirname, "..", "client", "build", "index.html"))
 });
 
 module.exports = router;

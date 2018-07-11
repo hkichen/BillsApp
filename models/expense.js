@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       notEmpty: true
     },
-  avgAmount: {
+    avgAmount: {
       type: DataTypes.DECIMAL(10, 2),
       notEmpty: true
     },

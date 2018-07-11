@@ -10,23 +10,23 @@ module.exports = {
       },
       firstName: {
         type: Sequelize.STRING,
-        notEmpty: true
+        notEmpty: true,
       },
       lastName: {
         type: Sequelize.STRING,
-        notEmpty: true
+        notEmpty: true,
       },
       email: {
         type: Sequelize.STRING,
         validate: {
           isEmail: true,
-          notEmpty: true
+          notEmpty: true,
         }
       },
       password: {
         type: Sequelize.STRING,
         validate: {
-          notEmpty: true
+          notEmpty: true,
         }
       },
       createdAt: {
