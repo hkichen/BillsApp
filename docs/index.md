@@ -48,6 +48,9 @@ We hit a couple of unrecoverable snags and had to start an entirely new repo and
 
 ![trello4](https://github.com/hkichen/Project3/blob/master/app/assets/github/trello4.PNG)
 
+## Heroku Deploy
+![heroku1](https://github.com/hkichen/Project3/blob/master/app/assets/github/heroku1.PNG)
+
 --------------------------------------------------------
 
 
