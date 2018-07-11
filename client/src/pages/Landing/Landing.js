@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 
 
 class Landing extends Component {
@@ -28,7 +29,7 @@ class Landing extends Component {
         <div className="container">
           <div className="row">
             <div className="main">
-              <h3>Please Log In, or <a href="">Sign Up</a></h3>
+              <h3>Please Log In, or <Link to="/signup"> Sign Up </Link></h3>
               <form>
                 <div className="form-group">
                   <label>email</label>

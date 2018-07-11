@@ -5,7 +5,8 @@
   "scripts": {
     "start": "set PORT=3001 && node bin/www",
     "client": "cd client && npm start",
-    "server": "nodemon app.js"
+    "server": "nodemon app.js",
+    "postinstall": "cd client && npm install && npm run build"
   },
   "dependencies": {
     "body-parser": "~1.18.2",
