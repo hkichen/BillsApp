@@ -17,6 +17,7 @@ class Users extends Component {
     }
   
     render() {
+      console.log(this.state.users);
       return (
         <ul>
           {
