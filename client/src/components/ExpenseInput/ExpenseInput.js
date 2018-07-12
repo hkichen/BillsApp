@@ -5,7 +5,11 @@ import CustomSelect from '../CustomSelect/CustomSelect';
 class ExpenseInput extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      category: 'Rent/Mortgage',
+      description: '',
+      avgAmount: ''
+    };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -13,7 +17,7 @@ class ExpenseInput extends Component {
 
   handleChange(event) {
     const target = event.target;
-    const value = target.type === 'select' ? target.selected : target.value;
+    const value = target.value;
     const name = target.name;
     console.log(target);
 
@@ -33,7 +37,7 @@ class ExpenseInput extends Component {
         <form onSubmit={this.handleSubmit}>
           <CustomSelect
             name="category"
-            value={this.state.value}
+            value={this.state.category}
             onChange={this.handleChange}
           />
           <label>Description of Expense</label>
