@@ -1,21 +1,60 @@
 import React from 'react';
 import { Component } from 'react';
+import CustomSelect from '../CustomSelect';
 
-class Statement extends Component{
-    render()    {
-        return  (
+class Statement extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {};
+
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleChange(event) {
+        const target = event.target;
+        const value = target.type === 'select' ? target.selected : target.value;
+        const name = target.name;
+        console.log(target);
+
+        this.setState({
+            [name]: value
+        });
+        console.log(this.state);
+    }
+
+    handleSubmit(event) {
+        event.preventDefault();
+        console.log(this.state);
+    }
+    render() {
+        return (
             <div>
-                <div className="card" id="expenseTypes">
-                    <button type="button" class="btn btn-primary" id="rent">Rent/Mortgage</button>
-                    <button type="button" class="btn btn-primary" id="util">Utilities</button>
-                    <button type="button" class="btn btn-primary" id="car">Car/Transit</button>
-                    <button type="button" class="btn btn-primary" id="food">Food/Dining</button>
-                    <button type="button" class="btn btn-primary" id="credit">Credit Cards</button>
-                    <button type="button" class="btn btn-primary" id="loans">Loans</button>
-                    <button type="button" class="btn btn-primary" id="medical">Medical</button>
-                    <button type="button" class="btn btn-primary" id="misc">Misc.</button>
-                </div>
+            <div>
+                <CustomSelect
+                    name="category"
+                    value={this.state.category}
+                    onChange={this.handleChange}
+                />
+                <label>Description of Expense</label>
+                <input
+                    className="form-control"
+                    name="description"
+                    type="text"
+                    value={this.state.description}
+                    onChange={this.handleChange}
+                    placeholder="Bills included..."
+                />
+                <label>Money Source</label>
+                <input
+                    className="form-control"
+                    name="description"
+                    type="text"
+                />
+                <br />
+                <button type="button" className="btn btn-primary" id="statementSelect">Select</button>
             </div>
+        </div>
         )
     }
 }
