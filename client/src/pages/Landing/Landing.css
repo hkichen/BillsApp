@@ -1,0 +1,7 @@
+body {
+  background: lightgrey url('/lg-calculator.jpeg') no-repeat fixed center;
+}
+img {
+  margin-top: 5em;
+  border: none;
+}
