@@ -1,6 +1,7 @@
 import React from 'react';
 import { Component } from 'react';
 import CustomSelect from '../CustomSelect';
+import Axios from 'axios';
 
 class Statement extends Component {
     constructor(props) {
@@ -26,6 +27,9 @@ class Statement extends Component {
     handleSubmit(event) {
         event.preventDefault();
         console.log(this.state);
+        axios.post("api/statements", (statements) => {
+            
+        })
     }
     render() {
         return (
