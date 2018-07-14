@@ -24,7 +24,7 @@ class Landing extends Component {
   render() {
     return (
       <div>
-        <h2>Landing Page</h2>
+        <h2>Welcome to Bill Buster</h2>
         <div className="container">
           <div className="row">
             <div className="main">

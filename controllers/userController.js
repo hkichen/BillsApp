@@ -27,10 +27,12 @@ module.exports = {
 
   //to update user info
   update: function(req, res) {
-    User.findOneAndUpdate({ _id: req.params.id }, req.body)
+    User.findById( {_id:req.params.id} )
+    .then(dbUser => dbUser.update())
     .then(dbUser => res.json(dbUser))
     .catch(err => res.status(422).json(err));
   },
+
 
   //option to delete account
   remove: function(req, res) {
