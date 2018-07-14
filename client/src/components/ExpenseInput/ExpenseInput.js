@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Input from '../Input/Input';
 import CustomSelect from '../CustomSelect/CustomSelect';
 
 class ExpenseInput extends Component {
@@ -41,7 +40,8 @@ class ExpenseInput extends Component {
             onChange={this.handleChange}
           />
           <label>Description of Expense</label>
-          <Input
+          <input
+            className="form-control"
             name="description"
             type="text"
             value={this.state.description}
@@ -49,7 +49,8 @@ class ExpenseInput extends Component {
             placeholder="Bills included..."
           />
           <label>Estimated Monthly Average</label>
-          <Input
+          <input
+            className="form-control"
             name="avgAmount"
             type="text"
             value={this.state.avgAmount}
