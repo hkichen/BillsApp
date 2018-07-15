@@ -33,9 +33,9 @@ module.exports = {
 
   //option to delete account
   remove: function(req, res) {
-    User.findById({ _id: req.params.id })
-    .then(dbUser => dbUser.remove())
-    .then(dbUser => res.json(dbUser))
-    .catch(err => res.status(422).json(err));
+    User.findById(req.params.id)
+      .then(user => {
+        return user.destroy();
+      }).then(() => res.send("User deleted!"))
   }
 };
