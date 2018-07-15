@@ -39,8 +39,10 @@ Each developer handled separate components of th app.
 3. Ryan: creating the interaction inside of each bill category and the add statement form, handling statement submission to database, setting up functionality to access computer/phone camera to take photos, storing images in database
 
 ## Future Features
-1. Currently we have predefined bill categories that the user has access to, but we would like to allow users to create their own categories and store specific statements pertenant to that it. This is especially useful for our Utilities category, which currenlt stores many types of utility bills. This feature would definitely give the user more control over how they want to store their information. This would also make rendering of the pie chart more accurate as well.
+1. Currently we have predefined bill categories that the user has access to, but we would like to allow users to create their own categories and store specific statements pertenant to it. This is especially useful for our Utilities category, which currenlt stores many types of utility bills. This feature would definitely give the user more control over how they want to store their information. This would also make rendering of the pie chart more accurate as well.
 
 2. Make statements searchable.
  
+3. Have a way to handle bills that are not monthly (annual, bi-annual payments)
+
 
