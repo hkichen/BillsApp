@@ -6,7 +6,7 @@ class Signup extends Component {
   state = {
     firstName: "",
     lastName: "",
-    monthlyIncome: "",
+    monthlyIncome: 0,
     email: "",
     password: "",
   }
@@ -50,7 +50,7 @@ class Signup extends Component {
             <input value={this.state.lastName} onChange={this.handleInputChange} name="lastName" type="lastName" />
           <br/>
             <label>Monthly Income</label>
-            <input placeholder="0000.00"value={this.state.monthlyIncome} onChange={this.handleInputChange} name='monthlyIncome' type="text" />
+            <input placeholder="0000.00"value={this.state.monthlyIncome} onChange={this.handleInputChange} name='monthlyIncome' type="number" />
           <br/>
             <label>Email</label>
             <input value={this.state.email} onChange={this.handleInputChange} name="email" type="email" />
