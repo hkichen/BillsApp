@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import './Signup.css';
+
 
 class Signup extends Component {
   state = {
@@ -37,35 +39,31 @@ class Signup extends Component {
 
   render() {
     return (
-      <div>
-        <h2>Account Resgistration</h2>
-        <div className="container">
-          <div className="row">
-            <div className="main">
-              <h3>Please Fill out your information below: </h3>
-              <form>
-                <div className="form-group">
-                <label htmlFor="firstName">First Name</label>
-                  <input value={this.state.firstName} onChange={this.handleInputChange} name="firstName" type="text" />
-
-                <label htmlFor="lastName">Last Name</label>
-                  <input value={this.state.lastNamee} onChange={this.handleInputChange} name="lastName" type="lastName" />
-
-                <label htmlFor="email">Email</label>
-                  <input value={this.state.email} onChange={this.handleInputChange} name="email" type="email" />
-                
-                <label htmlFor="password">Password</label>
-                  <input value={this.state.password} onChange={this.handleInputChange} name="password" type="password" />
-                </div>
-                <button 
-                  disabled={!(this.state.firstName && this.state.lastName && this.state.email &&  this.state.password)} 
-                  onClick={this.handleFormSubmit}>
-                  Create Account
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
+      <div className="container">
+        <h2 className="title">Account Resgistration</h2>
+        <h3 className="instructions">Please Fill out your information below: </h3>
+        <form className="signup">
+            <label>First Name</label>
+            <input value={this.state.firstName} onChange={this.handleInputChange} name="firstName" type="text" />
+          <br/>
+            <label>Last Name</label>
+            <input value={this.state.lastName} onChange={this.handleInputChange} name="lastName" type="lastName" />
+          <br/>
+            <label>Monthly Income</label>
+            <input placeholder="0000.00"value={this.state.monthlyIncome} onChange={this.handleInputChange} name='monthlyIncome' type="text" />
+          <br/>
+            <label>Email</label>
+            <input value={this.state.email} onChange={this.handleInputChange} name="email" type="email" />
+          <br/>
+            <label>Password</label>
+            <input value={this.state.password} onChange={this.handleInputChange} name="password" type="password" />
+          <br/>
+          <button className="btn-success flaot-right"
+            disabled={!(this.state.firstName && this.state.lastName && this.state.email &&  this.state.password)} 
+            onClick={this.handleFormSubmit}>
+            Create Account
+          </button>
+        </form>
       </div>
     )
   }
