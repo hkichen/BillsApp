@@ -38,7 +38,7 @@ class Profile extends Component {
                 </tr>                                                
               </tbody>
             </table>
-            <button className="btn btn-warning"><Link to="/profile form">Update Profile Information</Link></button>
+            <button className="btn btn-warning"><Link to="/profileform">Update Profile Information</Link></button>
           </div>
           </div>
       </div>
