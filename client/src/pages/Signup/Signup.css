@@ -17,7 +17,7 @@
     border-color: #87a175;
     border-radius: 20px;
     border-style: solid;
-    padding: 20px 145px 20px 145px;
+    padding: 2% 15% 2% 15%;
 }
 
 label, input {
@@ -30,7 +30,12 @@ button {
 }
 label {
     color: #2D2D2D;
-    font-size: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: .1rem;
+}
+input {
+    margin-bottom: 10px;
 }
 
 form, input {
