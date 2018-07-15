@@ -9,6 +9,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       notEmpty: true
     },
+    monthlyIncome: {
+      type: DataTypes.DECIMAL(10, 2),
+      notEmpty: true
+    },
     email: {
       type: DataTypes.STRING,
       validate: {

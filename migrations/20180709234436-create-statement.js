@@ -28,6 +28,10 @@ module.exports = {
         type: Sequelize.BOOLEAN,
         notEmpty: true
       },
+      img: {
+        type: Sequelize.BLOB,
+        notEmpty: true
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

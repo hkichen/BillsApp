@@ -16,6 +16,10 @@ module.exports = {
         type: Sequelize.STRING,
         notEmpty: true,
       },
+      monthlyIncome: {
+        type: Sequelize.DECIMAL(10, 2),
+        notEmpty: true
+      },
       email: {
         type: Sequelize.STRING,
         validate: {
