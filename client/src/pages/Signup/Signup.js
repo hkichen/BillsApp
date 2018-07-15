@@ -26,6 +26,7 @@ class Signup extends Component {
       body: JSON.stringify({
         firstName: this.state.firstName,
         lastName: this.state.lastName,
+        monthlyIncome: this.state.monthlyIncome,
         email: this.state.email,
         password: this.state.password
       }),

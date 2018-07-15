@@ -4,9 +4,10 @@ const User = require('../models').User;
 //These methods ONLY respond with a json
 module.exports = {
   findAll: function(req, res) {
-    User.all().then(dbUser => res.json(dbUser))
+    User.all().then(dbUsers => res.json(dbUsers))
     .catch(err => res.status(422).json(err));
   },
+
   findById: function(req, res) {
     User.findById(req.params.id)
     .then(dbUser => res.json(dbUser))
@@ -15,22 +16,18 @@ module.exports = {
 
   //to sign up a new user
   create: function(req, res) {
-    User.create({
-      firstName: req.body.firstName,
-      lastName: req.body.lastName,
-      email: req.body.email,
-      password: req.body.password,
-    })
+    User.create(req.body)
     .then(dbUser => res.json(dbUser))
     .catch(err => res.status(422).json(err));
   },
 
   //to update user info
   update: function(req, res) {
-    User.findById( {_id:req.params.id} )
-    .then(dbUser => dbUser.update())
-    .then(dbUser => res.json(dbUser))
-    .catch(err => res.status(422).json(err));
+    User.findById(req.params.id)
+      .then((user) => {
+        user.update(req.body)
+          .then(() => res.json(user.get()));
+      });
   },
 
 
