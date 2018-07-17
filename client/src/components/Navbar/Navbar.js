@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import image from '../../Images/folder-icon.png';
-import ('./Navbar.css');
+import('./Navbar.css');
 
 
 class Navbar extends Component {
