@@ -1,7 +1,12 @@
-body {
-  background: lightgrey url('/lg-calculator.jpeg') no-repeat fixed center;
+.contianer {
+    margin: 0 auto;
 }
-img {
-  margin-top: 5em;
-  border: none;
+
+.greeting {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.instructions {
+    text-align: center;
 }

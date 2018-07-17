@@ -10,4 +10,11 @@ router.post('/', userController.create);
 
 //find all users
 router.get('/', userController.findAll);
+
+//update user by id
+router.post('/:id', userController.update);
+
+//delete user by id
+router.delete('/:id', userController.remove);
+
 module.exports = router;

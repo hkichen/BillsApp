@@ -20,6 +20,10 @@ module.exports = (sequelize, DataTypes) => {
     autoPay: {
       type: DataTypes.BOOLEAN,
       notEmpty: true
+    },
+    img: {
+      type: DataTypes.BLOB,
+      notEmpty: true
     }
   });
   Statement.associate = function(models) {

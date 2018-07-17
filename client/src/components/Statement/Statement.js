@@ -27,9 +27,10 @@ class Statement extends Component {
     handleSubmit(event) {
         event.preventDefault();
         console.log(this.state);
-        axios.post("api/statements", (statements) => {
-            
-        })
+        axios.post("api/statements", (statements)
+            .then(res => {
+                return res;
+            }));
     }
     render() {
         return (
