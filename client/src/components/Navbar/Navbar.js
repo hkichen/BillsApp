@@ -1,42 +1,17 @@
 import React, { Component } from 'react';
-<<<<<<< HEAD
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import Landing from '../../pages/Landing';
-import Users from '../users/users';
-import User from '../users/user';
-import Dashboard from '../../pages/Dashboard';
-import Signup from '../../pages/Signup';
-
-=======
->>>>>>> 46f0f722f427851efbb45bdbc03c4df0712c7259
+import { Link } from 'react-router-dom';
+import image from '../../images/folder-icon.png';
+import('./Navbar.css');
 
 class Navbar extends Component {
   render() {
     return (
-<<<<<<< HEAD
-      <Router>
-        <div className="navbar">
-          <ul>
-            <li><Link to="/"> Landing </Link></li>
-            <li><Link to="/dashboard"> Dashboard </Link></li>
-            <li><Link to="/users"> Users </Link></li>
-            <li><Link to="/signup"> Sign Up </Link></li>
-          </ul>
-  
-          <hr/>
-  
-          <Route exact path="/" component={Landing}/>
-          <Route exact path="/dashboard" component={Dashboard}/>
-          <Route exact path="/users" component={Users}/>
-          <Route exact path="/users/:id" component={User}/>
-          <Route exact path="/signup" component={Signup} />
-=======
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <a className="navbar-brand" href="/">
-          BILL BUSTER
-        </a>
+      <nav className="navbar navbar-expand-lg" id="navbar">
+        <Link to="/" className="navbar-brand">
+          <img src={image} width="24" height="24" alt="" />BILL BUSTER
+        </Link>
         <button
-          className="navbar-toggler"
+          className="navbar-toggler navbar-light"
           type="button"
           data-toggle="collapse"
           data-target="#navbarNav"
@@ -49,27 +24,26 @@ class Navbar extends Component {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item active">
-              <a className="nav-link" href="/">
-                Home<span className="sr-only">(current)</span>
-              </a>
+              <Link to="/profile" className="nav-link">
+                Profile<span className="sr-only">(current)</span>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/dashboard">
+              <Link to="/dashboard" className="nav-link">
                 Dashboard
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/addExpense">
+              <Link to="/addExpense" className="nav-link">
                 Update Expenses
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/users">
-                Users
-              </a>
+              <Link to="/statements" className="nav-link">
+                Statements
+              </Link>
             </li>
           </ul>
->>>>>>> 46f0f722f427851efbb45bdbc03c4df0712c7259
         </div>
       </nav>
     );
