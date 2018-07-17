@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import('./Landing.css');
+
+import './Landing.css'
+
+
 
 class Landing extends Component {
   state = {
@@ -24,6 +27,7 @@ class Landing extends Component {
 
   render() {
     return (
+
       <div className="bg-img">
         <div className="container">
           <br />
@@ -68,10 +72,12 @@ class Landing extends Component {
                   </form>
                 </div>
               </div>
+
+      
             </div>
-          </div>
+            
         </div>
-      </div>
+      
     );
   }
 }
