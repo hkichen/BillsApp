@@ -5,9 +5,13 @@ import Landing from './pages/Landing';
 import Dashboard from './pages/Dashboard';
 import AddExpense from './pages/AddExpense';
 import Navbar from './components/Navbar';
+
+import Footer from './components/Footer';
+
 import Profile from './pages/Profile';
 import Signup from './pages/Signup';
 import ProfileForm from './pages/ProfileForm';
+
 
 const App = () => (
   <Router>
@@ -23,6 +27,7 @@ const App = () => (
         {/* <Route exact path="/users" component={Users} />
         <Route exact path="/users/:id" component={User} /> */}
       </Switch>
+      <Footer />
     </div>
   </Router>
 );

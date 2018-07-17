@@ -1,0 +1,25 @@
+use billsapp;
+
+insert into expenses (category, avgAmount, description, createdAt, updatedAt) 
+values ('Rent/Mortgage', 1200.00, 'Suntrust Bank, Piedmont Condo','2018-07-15','2018-07-15');
+
+insert into expenses (category, avgAmount, description, createdAt, updatedAt) 
+values ('Utilities', 200.00, 'Georgia Power, Comcast','2018-07-15','2018-07-15');
+
+insert into expenses (category, avgAmount, description, createdAt, updatedAt) 
+values ('Car/Transportation', 500.00, 'Suntrust Bank, Piedmont Condo','2018-07-15','2018-07-15');
+
+insert into expenses (category, avgAmount, description, createdAt, updatedAt) 
+values ('Food/Dining', 400.00, 'Groceries, Dining Out','2018-07-15','2018-07-15');
+
+insert into expenses (category, avgAmount, description, createdAt, updatedAt) 
+values ('Credit Cards',300.00, 'VISA, AMEX','2018-07-15','2018-07-15');
+
+insert into expenses (category, avgAmount, description, createdAt, updatedAt) 
+values ('Loans', 120.00, 'School','2018-07-15','2018-07-15');
+
+insert into expenses (category, avgAmount, description, createdAt, updatedAt) 
+values ('Medical/Health', 400.00, 'Insurance Premiums','2018-07-15','2018-07-15');
+
+insert into expenses (category, avgAmount, description, createdAt, updatedAt) 
+values ('Other', 300.00, 'Mobile, Clothes, Gym','2018-07-15','2018-07-15');

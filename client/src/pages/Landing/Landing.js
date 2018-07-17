@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+
 import './Landing.css'
+
 
 
 class Landing extends Component {
   state = {
-    email:  "",
-    password: ""
-  }
+    email: '',
+    password: ''
+  };
 
   handleInputChange = event => {
     const { name, value } = event.target;
@@ -21,33 +23,61 @@ class Landing extends Component {
     if (this.state.email && this.state.password) {
       //do so sort of get from DB and verification
     }
-  }
+  };
 
   render() {
     return (
-      <div className="container">
-        <h2 className="greeting">Welcome to Bill Buster</h2>
-        <div className="main">
-          <h3 className="instructions">
-            Please Log In, or <Link to="/signup">Sign Up</Link>
-          </h3>
-          <form>
-            <div className="form-group">
-              <label>Username or email</label>
-              <input type="text" className="form-control" name="email" />
+
+      <div className="bg-img">
+        <div className="container">
+          <br />
+          <br />
+          <div className="row">
+            <div className="col-sm-4 offset-sm-4">
+              <div className="card text-center" id="sign-up">
+                <h3>
+                  <Link to="/signup" id="link-text">
+                    Sign Up
+                  </Link>
+                </h3>
+              </div>
             </div>
-            <div className="form-group">
-              <label>Password</label>
-              <input
-                type="password"
-                className="form-control"
-                name="password"
-              />
+          </div>
+          <br />
+          <br />
+          <div className="row">
+            <div className="col-sm-8 offset-sm-2">
+              <div className="card" id="log-in">
+                <div className="card-body">
+                  <form>
+                    <div className="form-group">
+                      <label>Username or email</label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        name="email"
+                      />
+                    </div>
+                    <div className="form-group">
+                      <label>Password</label>
+                      <input
+                        type="password"
+                        className="form-control"
+                        name="password"
+                      />
+                    </div>
+                    <button className="btn-warning btn-lg" type="submit">
+                      Log In
+                    </button>
+                  </form>
+                </div>
+              </div>
+
+      
             </div>
-            <button className="btn-success" type="submit">Log In</button>
-          </form>
+            
         </div>
-      </div>
+      
     );
   }
 }

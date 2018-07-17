@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import API from '../../utils/API';
 import CustomSelect from '../CustomSelect/CustomSelect';
 
 class ExpenseInput extends Component {
@@ -28,7 +29,17 @@ class ExpenseInput extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    console.log(this.state);
+    //console.log(this.state);
+    const newExpense = {
+      category: this.state.category,
+      description: this.state.description,
+      avgAmount: this.state.avgAmount
+    };
+    API.createExpense({
+      newExpense
+    })
+      .then(res => console.log(newExpense))
+      .catch(err => console.log(err));
   }
   render() {
     return (
