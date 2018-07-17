@@ -29,6 +29,7 @@ class Signup extends Component {
       headers: {"Content-Type": "application/json"}
     }).then(function(){
       console.log("New user created!")
+      window.location.href="/"
     });
   };
 

@@ -1,15 +1,20 @@
 import React, { Component } from 'react';
+
 import { Link } from 'react-router-dom';
 import image from '../../images/folder-icon.png';
 import('./Navbar.css');
 
+
 class Navbar extends Component {
   render() {
     return (
+
       <nav className="navbar navbar-expand-lg" id="navbar">
         <Link to="/" className="navbar-brand">
           <img src={image} width="24" height="24" alt="" />BILL BUSTER
         </Link>
+
+      
         <button
           className="navbar-toggler navbar-light"
           type="button"
