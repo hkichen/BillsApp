@@ -6,6 +6,7 @@ import AddExpense from './pages/AddExpense';
 //import User from './components/User';
 //import Users from './components/Users';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 const App = () => (
   <Router>
@@ -18,6 +19,7 @@ const App = () => (
         {/* <Route exact path="/users" component={Users} />
         <Route exact path="/users/:id" component={User} /> */}
       </Switch>
+      <Footer />
     </div>
   </Router>
 );

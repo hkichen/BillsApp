@@ -1,0 +1,14 @@
+#navbar {
+  background-color: rgb(33, 163, 33);
+}
+.navbar-brand {
+  font-family: 'Audiowide', 'cursive';
+  font-size: 2em;
+  color: black;
+}
+.nav-link {
+  color: white;
+}
+.navbar-toggler {
+  color: white;
+}
