@@ -72,11 +72,10 @@ class Landing extends Component {
                   </form>
                 </div>
               </div>
-
-      
             </div>
-            
+          </div>
         </div>
+      </div>
       
     );
   }
