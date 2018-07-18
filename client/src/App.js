@@ -7,6 +7,7 @@ import AddExpense from './pages/AddExpense';
 import Navbar from './components/Navbar';
 import Profile from './pages/Profile';
 import Signup from './pages/Signup';
+import Statement from './components/Statement';
 import ProfileForm from './pages/ProfileForm';
 
 const App = () => (
@@ -20,8 +21,7 @@ const App = () => (
         <Route exact path="/profile" component={Profile} />
         <Route exact path="/profileform" component={ProfileForm} />
         <Route exact path="/signup" component={Signup} />
-        {/* <Route exact path="/users" component={Users} />
-        <Route exact path="/users/:id" component={User} /> */}
+        <Route exact path="/statements" component={Statement} />
       </Switch>
     </div>
   </Router>

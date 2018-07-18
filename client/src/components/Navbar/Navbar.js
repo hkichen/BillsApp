@@ -36,6 +36,11 @@ class Navbar extends Component {
                 Update Expenses
               </Link>
             </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/statements">
+                Statements
+              </Link>
+            </li>
           </ul>
         </div>
       </nav>

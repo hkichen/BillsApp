@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-const statementController = require('../../controllers').statements;
+const statementController = require('../../controllers').statement;
 
 // Matches with "/api/expense"
 router.get('/', statementController.findAll);

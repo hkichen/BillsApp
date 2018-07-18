@@ -1,6 +1,7 @@
 import React from 'react';
 import { Component } from 'react';
 import CustomSelect from '../CustomSelect';
+import Checkbox from '../CheckBox';
 import Axios from 'axios';
 
 class Statement extends Component {
@@ -55,6 +56,13 @@ class Statement extends Component {
                     className="form-control"
                     name="description"
                     type="text"
+                />
+                <label>Auto Pay</label>
+                <Checkbox />
+                <label>Photo (optional)</label>
+                <input id="statementUpload" 
+                    type="file" 
+                    accept="image/*;capture=camera"    
                 />
                 <br />
                 <button type="button" className="btn btn-primary" id="statementSelect">Select</button>
