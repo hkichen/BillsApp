@@ -2,7 +2,7 @@ import React from 'react';
 import { Component } from 'react';
 import CustomSelect from '../CustomSelect';
 import Checkbox from '../CheckBox';
-import Axios from 'axios';
+import axios from 'axios';
 
 class Statement extends Component {
     constructor(props) {

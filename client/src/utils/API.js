@@ -18,7 +18,7 @@ export default {
     return axios.post("/api/users", userData);
   },
 
-  addStatements: function() {
-    return axios.post("/api/statments");
+  addStatements: function(statementData) {
+    return axios.post("/api/statments", statementData);
   }
 };
