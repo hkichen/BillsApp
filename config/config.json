@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "passwordzrus",
+    "password": "pass",
     "database": "billsapp",
     "host": "127.0.0.1",
     "dialect": "mysql"

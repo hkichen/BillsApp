@@ -20,13 +20,3 @@ module.exports = {
     }
 }
 
-var statementInput = $('#statementUpload');
-
-function sendPic() {
-    var statementPic = statementInput.files[0];
-
-    
-    // *
-}
-
-myInput.addEventListener('change', sendPic, false);
