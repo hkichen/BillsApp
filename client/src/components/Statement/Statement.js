@@ -1,7 +1,6 @@
 import React from 'react';
 import { Component } from 'react';
 import CustomSelect from '../CustomSelect';
-import Checkbox from '../CheckBox';
 import axios from 'axios';
 import statementData from '../../utils/API';
 
@@ -59,7 +58,13 @@ class Statement extends Component {
                     type="text"
                 />
                 <label>Auto Pay</label>
-                <Checkbox />
+                <input
+                    className="form-check-input"
+                    type="checkbox"
+                    name="autoPay"
+                    value={this.state.category}
+                    onChange={this.handleChange}
+                    />
                 <label>Photo (optional)</label>
                 <input id="statementUpload" 
                     type="file" 
