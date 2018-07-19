@@ -7,7 +7,11 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   findAll: function(req, res) {
-    Expense.findAll()
+    Expense.findAll({
+      where: {
+        column: avgAmount
+      }
+    })
       .then(dbExpense => res.json(dbExpense))
       .catch(err => res.status(422).json(err));
   },

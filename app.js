@@ -4,6 +4,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+var db = require('./models');
 var index = require('./routes/index');
 var users = require('./routes/api/users');
 var expense = require('./routes/api/expense');
@@ -39,4 +40,10 @@ app.use(function(err, req, res, next) {
   res.json({ message: 'Uh-oh, error.' });
 });
 
+// var PORT = process.env.PORT || 3001;
+// db.sequelize.sync().then(function() {
+//   app.listen(PORT, function() {
+//     console.log('App now listening on port:', PORT);
+//   });
+// });
 module.exports = app;

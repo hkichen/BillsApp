@@ -17,7 +17,7 @@ class AddExpense extends Component {
           <div className="row">
             <div className="col-sm-8 offset-sm-2">
               <div className="card">
-                <div className="card-body">
+                <div className="card-body" id="expense-input">
                   <ExpenseInput />
                 </div>
               </div>

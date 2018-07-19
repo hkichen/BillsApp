@@ -3,18 +3,13 @@ import { Link } from 'react-router-dom';
 import image from '../../Images/folder-icon.png';
 import('./Navbar.css');
 
-
 class Navbar extends Component {
   render() {
     return (
-
-
       <nav className="navbar navbar-expand-lg" id="navbar">
         <Link to="/" className="navbar-brand">
           <img src={image} width="24" height="24" alt="" />BILL BUSTER
         </Link>
-
-      
 
         <button
           className="navbar-toggler navbar-light"
@@ -30,23 +25,16 @@ class Navbar extends Component {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item active">
-
               <Link to="/profile" className="nav-link">
-
-              
                 Profile<span className="sr-only">(current)</span>
               </Link>
             </li>
             <li className="nav-item">
-
               <Link to="/dashboard" className="nav-link">
-
-             
                 Dashboard
               </Link>
             </li>
             <li className="nav-item">
-
               <Link to="/addExpense" className="nav-link">
                 Update Expenses
               </Link>
@@ -55,9 +43,11 @@ class Navbar extends Component {
               <Link to="/statements" className="nav-link">
                 Statements
               </Link>
-
-              
-
+            </li>
+            <li className="nav-item">
+              <Link to="/logOut" className="nav-link">
+                Log Out
+              </Link>
             </li>
           </ul>
         </div>
