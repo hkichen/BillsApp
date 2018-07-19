@@ -25,7 +25,7 @@ class Profile extends Component {
           <br />
           <br />
           <div className="row">
-            <div className="col-sm-4 offset-sm-4">
+            <div className="col-sm-8 offset-sm-2">
               <div className="card text-center" id="user-profile">
                 <div className="card-title">
                   <h3 id="user-name">
