@@ -1,8 +1,7 @@
 import React from 'react';
 import { Component } from 'react';
 import CustomSelect from '../CustomSelect';
-import axios from 'axios';
-import statementData from '../../utils/API';
+import addStatements from '../../utils/API';
 
 class Statement extends Component {
     constructor(props) {
@@ -28,11 +27,8 @@ class Statement extends Component {
     handleSubmit(event) {
         event.preventDefault();
         console.log(this.state);
-        axios.post("api/statements", (statementData)
-            .then(res => {
-                return res;
-            }));
-    }
+        addStatements();
+        }
     render() {
         return (
             <div>
@@ -71,7 +67,7 @@ class Statement extends Component {
                     accept="image/*;capture=camera"    
                 />
                 <br />
-                <button type="button" className="btn btn-primary" id="statementSelect">Select</button>
+                <button type="button" className="btn btn-primary" id="statementSelect" onClick={this.handleSubmit}>Select</button>
             </div>
         </div>
         )
