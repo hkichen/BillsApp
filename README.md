@@ -7,6 +7,25 @@ Bill Buster is a mobile friendly app that allows users to log in to their virtua
 
 Heroku deploy link: https://secret-forest-89842.herokuapp.com/
 
+### Running The App
+* Clone the repo
+* install mysql
+* cd into the repo
+```
+npm install
+cd client
+npm install
+cd ..
+export DB_PASS="{whatever your password for mysql is}"
+nodemon start
+```
+* in a different terminal
+```
+cd into the repo
+cd client
+npm start
+```
+
 ### Developers
 - John Waymire
 - Lina Kichen
