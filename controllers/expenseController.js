@@ -7,7 +7,8 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   findAll: function(req, res) {
-    Expense.findAll()
+    console.log('we hit it');
+    Expense.findAll({})
       .then(dbExpense => res.json(dbExpense))
       .catch(err => res.status(422).json(err));
   },

@@ -8,7 +8,8 @@ class Footer extends Component {
     return (
       <div className="card fixed-bottom text-center" id="footer">
         <footer className="card-body" id="footer-body">
-          &copy; copyright 2018 <span id="footer-logo">BILL BUSTER</span>
+          Contact Us | Privacy & Security | Help <br />
+          &copy; 2018 <span id="footer-logo">BILL BUSTER</span>
         </footer>
       </div>
     );

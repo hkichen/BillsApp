@@ -4,6 +4,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+var db = require('./models');
 var index = require('./routes/index');
 var users = require('./routes/api/users');
 var expense = require('./routes/api/expense');
@@ -35,8 +36,7 @@ app.use(function(err, req, res, next) {
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
   // send error json
-  res.status(err.status || 500);
-  res.json({ message: 'Uh-oh, error.' });
+  res.send(err);
 });
 
 module.exports = app;
