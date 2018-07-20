@@ -36,14 +36,7 @@ app.use(function(err, req, res, next) {
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
   // send error json
-  res.status(err.status || 500);
-  res.json({ message: 'Uh-oh, error.' });
+  res.send(err);
 });
 
-// var PORT = process.env.PORT || 3001;
-// db.sequelize.sync().then(function() {
-//   app.listen(PORT, function() {
-//     console.log('App now listening on port:', PORT);
-//   });
-// });
 module.exports = app;

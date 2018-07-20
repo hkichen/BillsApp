@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Chart from '../../components/Chart/Chart';
-import API from '../../utils/API';
+//import API from '../../utils/API';
 import './Dashboard.css';
 
 class Dashboard extends Component {
@@ -11,30 +11,32 @@ class Dashboard extends Component {
       chartData: {}
     };
   }
-  componentWillMount() {
-    API.getExpense()
-      .then(res => res.json())
-      .then(
-        result => {
-          this.setState({
-            isLoaded: true,
-            items: result.items
-          });
-        },
-        // Note: it's important to handle errors here
-        // instead of a catch() block so that we don't swallow
-        // exceptions from actual bugs in components.
-        error => {
-          this.setState({
-            isLoaded: true,
-            error
-          });
-        }
-      );
-  }
   // componentWillMount() {
-  //   this.getChartData();
+  //   API.getExpense()
+  //     .then(res => {
+  //       console.log(res);
+  //       res.json();
+  //     })
+  //     .then(
+  //       result => {
+  //         this.setState({
+
+  //         });
+  //       },
+  //       // Note: it's important to handle errors here
+  //       // instead of a catch() block so that we don't swallow
+  //       // exceptions from actual bugs in components.
+  //       error => {
+  //         this.setState({
+  //           isLoaded: true,
+  //           error
+  //         });
+  //       }
+  //     );
   // }
+  componentWillMount() {
+    this.getChartData();
+  }
 
   getChartData() {
     this.setState({

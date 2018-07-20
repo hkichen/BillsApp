@@ -19,9 +19,10 @@ export default {
   },
   //updates new Expense to database
   createExpense: function(expenseData) {
-    return axios.put('/api/expense', expenseData);
+    return axios.put('/api/expense/', expenseData);
   },
   getExpense: function(expenseData) {
-    return axios.get('api/expense', expenseData);
+    console.log('we hit getExpense');
+    return axios.get('/api/expense/', expenseData);
   }
 };
