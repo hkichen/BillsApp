@@ -1,17 +1,32 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Router, Route } from 'react-router-dom';
 import './App.css'
 import Landing from './pages/Landing';
 import Dashboard from './pages/Dashboard';
 import AddExpense from './pages/AddExpense';
 import Navbar from './components/Navbar';
+//  import Footer from './components/Footer';
 import Profile from './pages/Profile';
 import Signup from './pages/Signup';
 import Statement from './components/Statement';
 import ProfileForm from './pages/ProfileForm';
+import Auth from './Auth/Auth';
+import history from './history';
+import Callback from './components/Callback/Callback';
 
-const App = () => (
-  <Router>
+
+const auth = new Auth();
+
+const handleAuthentication = (nextState, replace) => {
+  if (/access_token|id_token|error/.test(nextState.location.hash)) {
+    auth.handleAuthentication();
+  }
+}
+
+export const AppRouter = () => {
+  
+  return (
+    <Router history={history} component={Landing}>
     <div>
       <Navbar />
       <Switch>
@@ -24,7 +39,7 @@ const App = () => (
         <Route exact path="/statements" component={Statement} />
       </Switch>
     </div>
-  </Router>
-);
+    </Router>
+  );
+}
 
-export default App;

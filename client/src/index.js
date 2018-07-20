@@ -1,6 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App.js';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import ReactDOM from 'react-dom';
+import {AppRouter} from './App.js';
+
+const routes= AppRouter();
+
+
+ReactDOM.render(routes, document.getElementById('root'));
 

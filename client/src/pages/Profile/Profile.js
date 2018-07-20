@@ -3,47 +3,39 @@ import { Link } from 'react-router-dom';
 import './Profile.css';
 
 class Profile extends Component {
-  
-  //dummy data
-  state = {
-    firstName: "Lina",
-    lastName: "Kichen",
-    email: "me@me.com",
-    password:"password"
+  componentWillMount() {
+    this.setState({ profile: {} });
+    const { userProfile, getProfile } = this.props.auth;
+    if (!userProfile) {
+      getProfile((err, profile) => {
+        this.setState({ profile });
+      });
+    } else {
+      this.setState({ profile: userProfile });
+    }
   }
-  
-  // componentDidMount() {
-  //   fetch('/api/users/1')
-  //   .then(res => res.json())
-  //   .then(users => this.setState({users: users}));
-  // }
-  
+     
   render() {
-    console.log(this.state);
+    
+    const { profile } = this.state;
+    const { isAuthenticated } = this.props.auth;
     return (
-      <div className="userInfo">
-          <div className="panel panel-info">
-            <div className="panel-heading">
-              <h5 className="panel-title">{this.state.firstName} {this.state.lastName}</h5>
+      isAuthenticated() ?
+      <div className="container">
+        <div className="profile-area">
+          <h1>Profile Information</h1>
+          <div header="Profile">
+            <img src={profile.picture} alt="profile" />
+            <div>
+              <h4>Name: {profile.name} </h4>
             </div>
-            
-            <div className="panel-body">
-              <table className="table table-user-information">
-              <tbody>
-                <tr>
-                  <td>Monthly Income: empty for now</td>
-                </tr>
-                <tr>
-                  <td>Email: {this.state.email}</td>
-                </tr>                                                
-              </tbody>
-            </table>
-            <button className="btn btn-warning"><Link to="/profileform">Update Profile Information</Link></button>
           </div>
-          </div>
+        </div>
+        <button className="btn-warning"><Link to="/profileform">Update Profile</Link></button>
       </div>
+      : null
     );
   }
-};
+}
 
 export default Profile;
