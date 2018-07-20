@@ -71,7 +71,9 @@ class Dashboard extends Component {
     });
   }
   render() {
+    const { isAuthenticated } = this.props.auth;
     return (
+      isAuthenticated() ?
       <div className="container">
         <div className="row">
           <div className="col-sm-6 offset-sm-3">
@@ -127,6 +129,7 @@ class Dashboard extends Component {
           </div>
         </div>
       </div>
+      : null
     );
   }
 }

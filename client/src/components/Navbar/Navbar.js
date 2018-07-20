@@ -4,10 +4,24 @@ import image from '../../Images/folder-icon.png';
 import('./Navbar.css');
 
 class Navbar extends Component {
+  goTo(route) {
+    this.props.history.replace(`/${route}`)
+  }
+
+  login() {
+    this.props.auth.login();
+  }
+
+  logout() {
+    this.props.auth.logout();
+  }
+
   render() {
+    const { isAuthenticated } = this.props.auth;
+
     return (
       <nav className="navbar navbar-expand-lg" id="navbar">
-        <Link to="/" className="navbar-brand">
+        <Link to="/landing" className="navbar-brand">
           <img src={image} width="24" height="24" alt="" />BILL BUSTER
         </Link>
 
@@ -27,13 +41,15 @@ class Navbar extends Component {
             <li className="nav-item active">
               <Link to="/profile" className="nav-link">
                 Profile<span className="sr-only">(current)</span>
-              </Link>
+              </Link> 
             </li>
+
             <li className="nav-item">
-              <Link to="/dashboard" className="nav-link">
+              <Link className="nav-link" to="/dashboard">
                 Dashboard
               </Link>
             </li>
+
             <li className="nav-item">
               <Link to="/addExpense" className="nav-link">
                 Update Expenses
@@ -44,11 +60,19 @@ class Navbar extends Component {
                 Statements
               </Link>
             </li>
-            <li className="nav-item">
-              <Link to="/logOut" className="nav-link">
-                Log Out
-              </Link>
+            { !isAuthenticated() ?
+            <li className="nav-item log-in-out" onClick={this.login.bind(this)}>
+              <div className="nav-link">
+                Log In
+              </div>
             </li>
+
+            : <li className="nav-item log-in-out" onClick={this.logout.bind(this)}>
+              <div className="nav-link">
+                Log Out
+              </div>
+              </li>
+            }
           </ul>
         </div>
       </nav>

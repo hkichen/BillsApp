@@ -1,28 +1,8 @@
 import React, { Component } from 'react';
+import './Landing.css'
 import { Link } from 'react-router-dom';
 
-import './Landing.css';
-
 class Landing extends Component {
-  state = {
-    email: '',
-    password: ''
-  };
-
-  handleInputChange = event => {
-    const { name, value } = event.target;
-    this.setState({
-      [name]: value
-    });
-  };
-
-  handleFormSubmit = event => {
-    event.preventDefault();
-    if (this.state.email && this.state.password) {
-      //do so sort of get from DB and verification
-    }
-  };
-
   render() {
     return (
       <div className="bg-img">
@@ -59,26 +39,6 @@ class Landing extends Component {
                     your finances simpler and more comprehensive, without all
                     the clutter.
                   </p>
-                  {/* <form>
-                    <div className="form-group">
-                      <label>Username or email</label>
-                      <input
-                        type="text"
-                        className="form-control"
-                        name="email"
-                      />
-                    </div>
-                      <label>Password</label>
-                      <input
-                        type="password"
-                        className="form-control"
-                        name="password"
-                      />
-                    </div>
-                    <button className="btn-warning btn-lg" type="submit">
-                      Log In
-                    </button>
-                  </form> */}
                 </div>
               </div>
             </div>
