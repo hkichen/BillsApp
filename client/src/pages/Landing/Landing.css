@@ -37,13 +37,7 @@ body {
   background: rgba(17, 90, 86, 1);
   color: white;
 }
-
-/* #log-in {
-  background: rgba(17, 90, 86, 1);
-  color: white;
-} */
-/* #info-text {
-  background: white;
+#logo {
+  font-family: 'Audiowide', 'cursive';
   color: black;
-  margin: 1em;
-} */
+}
