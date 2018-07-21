@@ -9,7 +9,6 @@ var db = require('./models');
 var index = require('./routes/index');
 var users = require('./routes/api/users');
 var expense = require('./routes/api/expense');
-var statements = require('./routes/api/statement');
 
 const jwt = require('express-jwt');
 const jwtAuthz = require('express-jwt-authz');
@@ -42,9 +41,9 @@ app.use(cors());
 
 app.use(express.static(path.join(__dirname, 'client/build')));
 
-app.use('/api/expense', expense);
-app.use('/api/users', users);
-app.use('/api/statements', statements);
+//building api routes to billsapp databse
+app.use('/api/expense', checkJwt, expense);
+app.use('/api/users', checkJwt, users);
 app.use('/', index);
 
 // catch 404 and forward to error handler

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Component } from 'react';
 import CustomSelect from '../CustomSelect';
-import addStatements from '../../utils/API';
+import Axios from 'axios';
 
 class Statement extends Component {
     constructor(props) {
@@ -27,8 +27,11 @@ class Statement extends Component {
     handleSubmit(event) {
         event.preventDefault();
         console.log(this.state);
-        addStatements();
-        }
+        axios.post("api/statements", (statements)
+            .then(res => {
+                return res;
+            }));
+    }
     render() {
         return (
             <div>
@@ -52,26 +55,9 @@ class Statement extends Component {
                     className="form-control"
                     name="description"
                     type="text"
-                    value={this.state.moneySource}
-                    onChange={this.handleChange}
-                />
-                <label>Auto Pay</label>
-                <input
-                    className="form-check-input"
-                    type="checkbox"
-                    name="autoPay"
-                    value={this.state.autoPay}
-                    onChange={this.handleChange}
-                    />
-                <label>Photo (optional)</label>
-                <input id="statementUpload" 
-                    type="file" 
-                    accept="image/*;capture=camera"
-                    value={this.state.photo}
-                    onChange={this.handleChange}    
                 />
                 <br />
-                <button type="button" className="btn btn-primary" id="statementSelect" onClick={this.handleSubmit}>Select</button>
+                <button type="button" className="btn btn-primary" id="statementSelect">Select</button>
             </div>
         </div>
         )
