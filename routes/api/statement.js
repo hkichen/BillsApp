@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
 
-const statementController = require('../../controllers').statement;
+const statementController = require('../../controllers').statements;
 
-// Matches with "/api/statements"
+// Matches with "/api/expense"
 router.get('/', statementController.findAll);
 router.post('/', statementController.create);
 

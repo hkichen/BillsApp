@@ -7,8 +7,7 @@ module.exports = {
             amount: req.body.amount,
             description: req.body.description,
             moneySource: req.body.moneySource,
-            autoPay: req.body.autoPay,
-            photo: req.body.photo
+            autoPay: req.body.autoPay
         })
             .then(dbStatement => res.json(dbStatement))
             .catch(err => res.status(422).json(err));
