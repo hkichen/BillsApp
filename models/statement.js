@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.BOOLEAN,
       notEmpty: true
     },
-    img: {
+    photo: {
       type: DataTypes.BLOB,
       notEmpty: true
     }
