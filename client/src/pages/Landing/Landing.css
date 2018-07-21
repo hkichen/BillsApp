@@ -26,7 +26,7 @@ body {
 #sign-up {
   background: rgba(235, 221, 25, 1);
 }
-#link-text {
+.link-text {
   color: rgba(17, 90, 86, 1);
 }
 .card {

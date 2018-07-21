@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Chart from '../../components/Chart/Chart';
-//import API from '../../utils/API';
+import API from '../../utils/API';
 import './Dashboard.css';
 
 class Dashboard extends Component {
@@ -11,32 +11,34 @@ class Dashboard extends Component {
       chartData: {}
     };
   }
-  // componentWillMount() {
-  //   API.getExpense()
-  //     .then(res => {
-  //       console.log(res);
-  //       res.json();
-  //     })
-  //     .then(
-  //       result => {
-  //         this.setState({
-
-  //         });
-  //       },
-  //       // Note: it's important to handle errors here
-  //       // instead of a catch() block so that we don't swallow
-  //       // exceptions from actual bugs in components.
-  //       error => {
-  //         this.setState({
-  //           isLoaded: true,
-  //           error
-  //         });
-  //       }
-  //     );
-  // }
   componentWillMount() {
-    this.getChartData();
+    API.getExpense()
+      .then(res => {
+        res.json();
+        let amount = res.data;
+        let i = 0;
+        for (i = 0; i < amount.length; i++);
+        console.log(amount[i].avgAmount);
+      })
+      .then(
+        result => {
+          this.setState({});
+        },
+        // Note: it's important to handle errors here
+        // instead of a catch() block so that we don't swallow
+        // exceptions from actual bugs in components.
+        error => {
+          this.setState({
+            isLoaded: true,
+            error
+          });
+        }
+      )
+      .catch(err => console.log(err));
   }
+  // componentWillMount() {
+  //   this.getChartData();
+  // }
 
   getChartData() {
     this.setState({
@@ -72,8 +74,7 @@ class Dashboard extends Component {
   }
   render() {
     const { isAuthenticated } = this.props.auth;
-    return (
-      isAuthenticated() ?
+    return isAuthenticated() ? (
       <div className="container">
         <div className="row">
           <div className="col-sm-6 offset-sm-3">
@@ -129,8 +130,7 @@ class Dashboard extends Component {
           </div>
         </div>
       </div>
-      : null
-    );
+    ) : null;
   }
 }
 

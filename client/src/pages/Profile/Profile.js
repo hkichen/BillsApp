@@ -14,27 +14,41 @@ class Profile extends Component {
       this.setState({ profile: userProfile });
     }
   }
-     
+
   render() {
-    
     const { profile } = this.state;
     const { isAuthenticated } = this.props.auth;
-    return (
-      isAuthenticated() ?
-      <div className="container">
-        <div className="profile-area">
-          <h1>Profile Information</h1>
-          <div header="Profile">
-            <img src={profile.picture} alt="profile" />
-            <div>
-              <h4>Name: {profile.name} </h4>
+    return isAuthenticated() ? (
+      <div className="bg-img">
+        <div className="container">
+          <br />
+          <div className="row">
+            <div className="col-sm-6 offset-sm-3">
+              <h2 className="text-center">Profile Information</h2>
+            </div>
+          </div>
+          <br />
+          <div className="row">
+            <div className="col-sm-8 offset-sm-2">
+              <div className="card text-center">
+                <div className="card-body">
+                  <img src={profile.picture} alt="profile" id="profile-img" />
+                  <br />
+                  <br />
+                  <h4>{profile.name}</h4>
+                  <br />
+                  <button className=" btn btn-warning btn-lg">
+                    <Link to="/profileform" className="link-text">
+                      Update
+                    </Link>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <button className="btn-warning"><Link to="/profileform">Update Profile</Link></button>
       </div>
-      : null
-    );
+    ) : null;
   }
 }
 

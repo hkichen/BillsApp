@@ -28,17 +28,20 @@ class ExpenseInput extends Component {
   }
 
   handleSubmit(event) {
-    event.preventDefault();
-    //console.log(this.state);
+    // event.preventDefault();
+    console.log('submit works');
     const newExpense = {
       category: this.state.category,
       description: this.state.description,
       avgAmount: this.state.avgAmount
     };
-    API.createExpense({
+    console.log(newExpense);
+    API.updateExpense({
       newExpense
     })
-      .then(res => console.log(newExpense))
+      .then(res => {
+        console.log('updated expense');
+      })
       .catch(err => console.log(err));
   }
   render() {

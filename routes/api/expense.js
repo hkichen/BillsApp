@@ -5,7 +5,7 @@ const expenseController = require('../../controllers').expenses;
 
 // Matches with "/api/expense"
 router.get('/', expenseController.findAll);
-router.put('/', expenseController.create);
-//router.put('/', expenseController.update);
+router.post('/', expenseController.create);
+router.put('/', expenseController.update);
 
 module.exports = router;
