@@ -73,3 +73,7 @@ typings/
 .serverless
 
 /client/build
+
+# Package-Lock.json
+package-lock.json
+/client/package-lock.json
