@@ -1,11 +1,8 @@
-
-.userInfo {
-    max-width: 70%;
-    position: absolute;
-    top:65px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-
-    margin: auto;
+#user-name {
+  color: white;
+  margin-top: 1em;
+}
+#btn-text {
+  color: rgba(17, 90, 86, 1);
+  font-size: 1em;
 }

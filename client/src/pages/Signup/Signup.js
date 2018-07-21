@@ -51,7 +51,7 @@ class Signup extends Component {
             <input value={this.state.lastName} onChange={this.handleInputChange} name="lastName" type="lastName" />
           <br/>
             <label>Monthly Income</label>
-            <input placeholder="0000.00"value={this.state.monthlyIncome} onChange={this.handleInputChange} name='monthlyIncome' type="number" />
+            <input value={this.state.monthlyIncome} onChange={this.handleInputChange} name='monthlyIncome' type="number" />
           <br/>
             <label>Email</label>
             <input value={this.state.email} onChange={this.handleInputChange} name="email" type="email" />
@@ -59,7 +59,7 @@ class Signup extends Component {
             <label>Password</label>
             <input value={this.state.password} onChange={this.handleInputChange} name="password" type="password" />
           <br/>
-          <button className="btn-success flaot-right"
+          <button className="btn-success"
             disabled={!(this.state.firstName && this.state.lastName && this.state.email &&  this.state.password)} 
             onClick={this.handleFormSubmit}>
             Create Account

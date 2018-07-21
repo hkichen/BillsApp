@@ -15,13 +15,10 @@ export default {
   },
   // adds new user to the database
   createUser: function(userData) {
-    return axios.post('/api/users', userData);
+    return axios.post("/api/users", userData);
   },
-  //updates new Expense to database
-  createExpense: function(data) {
-    return axios.put('/api/expense', data);
-  },
-  getExpense: function(data) {
-    return axios.get('api/expense', data);
+
+  addStatements: function(statementData) {
+    return axios.post("/api/statments/", statementData);
   }
 };

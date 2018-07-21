@@ -1,4 +1,3 @@
-
 body {
   width: 100%;
   height: 100%;
@@ -25,7 +24,7 @@ body {
   opacity: 0.6;
 }
 #sign-up {
-  background: white;
+  background: rgba(235, 221, 25, 1);
 }
 #link-text {
   color: rgba(17, 90, 86, 1);
@@ -37,5 +36,14 @@ body {
 .card-body {
   background: rgba(17, 90, 86, 1);
   color: white;
-
 }
+
+/* #log-in {
+  background: rgba(17, 90, 86, 1);
+  color: white;
+} */
+/* #info-text {
+  background: white;
+  color: black;
+  margin: 1em;
+} */

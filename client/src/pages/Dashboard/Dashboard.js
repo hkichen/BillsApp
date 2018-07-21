@@ -13,14 +13,26 @@ class Dashboard extends Component {
   }
   // componentWillMount() {
   //   API.getExpense()
-  //   .then(res => res.json())
-  //   .then(
-  //     result => {
-  //       this.setState({
-  //         isLoaded: true,
-  //         items: result.items
-  //       }).catch(err => console.log(err));
+  //     .then(res => {
+  //       console.log(res);
+  //       res.json();
+  //     })
+  //     .then(
+  //       result => {
+  //         this.setState({
 
+  //         });
+  //       },
+  //       // Note: it's important to handle errors here
+  //       // instead of a catch() block so that we don't swallow
+  //       // exceptions from actual bugs in components.
+  //       error => {
+  //         this.setState({
+  //           isLoaded: true,
+  //           error
+  //         });
+  //       }
+  //     );
   // }
   componentWillMount() {
     this.getChartData();
@@ -59,7 +71,9 @@ class Dashboard extends Component {
     });
   }
   render() {
+    const { isAuthenticated } = this.props.auth;
     return (
+      isAuthenticated() ?
       <div className="container">
         <div className="row">
           <div className="col-sm-6 offset-sm-3">
@@ -115,6 +129,7 @@ class Dashboard extends Component {
           </div>
         </div>
       </div>
+      : null
     );
   }
 }
