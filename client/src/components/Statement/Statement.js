@@ -52,19 +52,23 @@ class Statement extends Component {
                     className="form-control"
                     name="description"
                     type="text"
+                    value={this.state.moneySource}
+                    onChange={this.handleChange}
                 />
                 <label>Auto Pay</label>
                 <input
                     className="form-check-input"
                     type="checkbox"
                     name="autoPay"
-                    value={this.state.category}
+                    value={this.state.autoPay}
                     onChange={this.handleChange}
                     />
                 <label>Photo (optional)</label>
                 <input id="statementUpload" 
                     type="file" 
-                    accept="image/*;capture=camera"    
+                    accept="image/*;capture=camera"
+                    value={this.state.photo}
+                    onChange={this.handleChange}    
                 />
                 <br />
                 <button type="button" className="btn btn-primary" id="statementSelect" onClick={this.handleSubmit}>Select</button>
