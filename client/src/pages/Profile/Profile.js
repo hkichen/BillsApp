@@ -7,8 +7,6 @@ import API from '../../utils/API';
 
 class Profile extends Component {
 
-
-
   componentWillMount() {
     this.setState({ profile: {} });
     const { userProfile, getProfile } = this.props.auth;
@@ -22,9 +20,8 @@ class Profile extends Component {
 
         API.getMeta(sub)
           .then(res => {
-            console.log(res)
-            console.log("metadata: ")
             console.log(res.data.user_metadata)
+                     
             this.setState({metadata: res.data.user_metadata || {}})
           })
           .catch(err => console.log(err))
