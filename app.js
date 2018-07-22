@@ -42,8 +42,8 @@ app.use(cors());
 app.use(express.static(path.join(__dirname, 'client/build')));
 
 //building api routes to billsapp databse
-app.use('/api/expense', checkJwt, expense);
-app.use('/api/users', checkJwt, users);
+app.use('/api/expense',  expense);
+app.use('/api/users',  users);
 app.use('/', index);
 
 // catch 404 and forward to error handler
