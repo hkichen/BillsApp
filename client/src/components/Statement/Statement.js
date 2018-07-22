@@ -9,7 +9,11 @@ import API from '../../utils/API';
 class Statement extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      id: '1',
+      description: '',
+      avgAmount: ''
+    };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -29,24 +33,18 @@ class Statement extends Component {
   handleSubmit(event) {
     event.preventDefault();
     console.log(this.state);
-    //componentWillMount()
-    API.addStatements()
-      .then(res => {
-        console.log(res);
-        //res.json();
-        //this.setState({
+    
+    const newStatement = {
+      id: this.state.id,
+      description: this.state.description,
+      avgAmount: this.state.avgAmount,
+      moneySource: this.state.moneySource,
+      autoPay: this.state.autoPay,
+      photo: this.state.photo
+    };
+    API.
+  }
 
-        //});
-      })
-      .catch(err => console.log(err));
-  }
-  cancelCourse(event) {
-    this.setState({
-      id: '1',
-      description: '',
-      avgAmount: ''
-    });
-  }
   render() {
     const { isAuthenticated } = this.props.auth;
     return isAuthenticated() ? (
@@ -116,7 +114,6 @@ class Statement extends Component {
                     className="btn btn-warning btn-lg"
                     type="submit"
                     value="Submit"
-                    onClick={this.cancelCourse}
                   />
                 </form>
               </div>

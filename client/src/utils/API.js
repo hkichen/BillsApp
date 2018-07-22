@@ -12,4 +12,6 @@ export default {
   getExpense: function() {
     return axios.get('/api/expense/');
   }
+
+  
 };
