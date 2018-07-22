@@ -13,7 +13,6 @@ class ExpenseInput extends Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.cancelCourse = this.cancelCourse.bind(this);
   }
 
   handleChange(event) {
@@ -30,29 +29,17 @@ class ExpenseInput extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    console.log('submit works');
     const newExpense = {
-      id: this.state.id,
       description: this.state.description,
       avgAmount: this.state.avgAmount
     };
-    console.log(newExpense);
-    API.updateExpense({
-      newExpense
-    })
+    API.updateExpense(newExpense, this.state.id)
       .then(res => {
-        console.log('updated expense');
+        console.log('this is:' + JSON.stringify(newExpense));
       })
       .catch(err => console.log(err));
   }
 
-  cancelCourse(event) {
-    this.setState({
-      id: '1',
-      description: '',
-      avgAmount: ''
-    });
-  }
   render() {
     return (
       <div>
@@ -85,7 +72,6 @@ class ExpenseInput extends Component {
             className="btn btn-warning btn-lg"
             type="submit"
             value="Submit"
-            onClick={this.cancelCourse}
           />
         </form>
       </div>

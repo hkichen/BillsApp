@@ -3,11 +3,13 @@ import axios from 'axios';
 
 export default {
   //updates new Expense to database
-  updateExpense: function(newExpense) {
-    return axios.put('/api/expense/', newExpense);
+  updateExpense: function(data, id) {
+    const url = '/api/expense/' + id;
+    console.log(url);
+    return axios.put(url, data);
   },
+  //gets expenses for pie chart
   getExpense: function() {
-    console.log('we hit getExpense');
     return axios.get('/api/expense/');
   }
 };

@@ -12,17 +12,16 @@ class Dashboard extends Component {
     };
   }
   componentWillMount() {
+    this.getChartData();
+  }
+  getChartData() {
     API.getExpense()
       .then(
         res => {
-          console.log('getting res');
-
           let amount = res.data;
-          console.log(amount);
           let i = 0;
           const amountArr = [];
           for (i = 0; i < amount.length; i++) {
-            console.log(amount[i].avgAmount);
             amountArr.push(amount[i].avgAmount);
           }
           const amountIntArr = amountArr.map(x => Number.parseInt(x, 10));
@@ -71,42 +70,39 @@ class Dashboard extends Component {
       )
       .catch(err => console.log(err));
   }
-  // componentWillMount() {
-  //   this.getChartData();
-  // }
 
-  getChartData() {
-    this.setState({
-      chartData: {
-        labels: [
-          'Rent/Mortgage',
-          'Utilities',
-          'Car/Transportation',
-          'Food/Dining',
-          'Credit Cards',
-          'Loans',
-          'Medical/Health',
-          'Other'
-        ],
-        datasets: [
-          {
-            label: 'Total Expense by Percentage',
-            data: [30, 5, 15, 20, 15, 5, 5, 5],
-            backgroundColor: [
-              'rgb(17,90,86)',
-              'rgb(75,196,210)',
-              'rgb(235,221,25)',
-              'rgb(44,207,44)',
-              'rgb(235,141,19)',
-              'rgb(30,113,173)',
-              'rgb(152,229,46)',
-              'rgb(45,102,9)'
-            ]
-          }
-        ]
-      }
-    });
-  }
+  // getChartData() {
+  //   this.setState({
+  //     chartData: {
+  //       labels: [
+  //         'Rent/Mortgage',
+  //         'Utilities',
+  //         'Car/Transportation',
+  //         'Food/Dining',
+  //         'Credit Cards',
+  //         'Loans',
+  //         'Medical/Health',
+  //         'Other'
+  //       ],
+  //       datasets: [
+  //         {
+  //           label: 'Total Expense by Percentage',
+  //           data: [30, 5, 15, 20, 15, 5, 5, 5],
+  //           backgroundColor: [
+  //             'rgb(17,90,86)',
+  //             'rgb(75,196,210)',
+  //             'rgb(235,221,25)',
+  //             'rgb(44,207,44)',
+  //             'rgb(235,141,19)',
+  //             'rgb(30,113,173)',
+  //             'rgb(152,229,46)',
+  //             'rgb(45,102,9)'
+  //           ]
+  //         }
+  //       ]
+  //     }
+  //   });
+  // }
   render() {
     const { isAuthenticated } = this.props.auth;
     return isAuthenticated() ? (
