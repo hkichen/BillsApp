@@ -4,16 +4,15 @@ import { Pie } from 'react-chartjs-2';
 class Chart extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      chartData: props.chartData
-    };
+    console.log('building the chart');
+    console.log(props);
   }
 
   render() {
     return (
       <div className="chart-container">
         <Pie
-          data={this.state.chartData}
+          data={this.props.chartData}
           options={{
             legend: {
               display: false,

@@ -17,7 +17,7 @@ class Statement extends Component {
 
   handleChange(event) {
     const target = event.target;
-    const value = target.type === 'select' ? target.selected : target.value;
+    const value = target.value;
     const name = target.name;
     console.log(target);
 
@@ -40,13 +40,7 @@ class Statement extends Component {
       })
       .catch(err => console.log(err));
   }
-  cancelCourse(event) {
-    this.setState({
-      id: '1',
-      description: '',
-      avgAmount: ''
-    });
-  }
+
   render() {
     const { isAuthenticated } = this.props.auth;
     return isAuthenticated() ? (
@@ -104,6 +98,7 @@ class Statement extends Component {
                   <br />
                   <label>Upload Image or File</label>
                   <input
+                    className="form-control"
                     id="statementUpload"
                     type="file"
                     accept="image/*;capture=camera"
@@ -116,7 +111,6 @@ class Statement extends Component {
                     className="btn btn-warning btn-lg"
                     type="submit"
                     value="Submit"
-                    onClick={this.cancelCourse}
                   />
                 </form>
               </div>
