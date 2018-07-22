@@ -1,8 +1,8 @@
 import React from 'react';
 import { Component } from 'react';
 import CustomSelect from '../CustomSelect';
-
-import StatementInfo from '../StatementInfo';
+import Checkbox from '../CheckBox';
+//import StatementInfo from '../StatementInfo';
 // import { Result } from 'range-parser';
 import API from '../../utils/API';
 
@@ -40,62 +40,91 @@ class Statement extends Component {
       })
       .catch(err => console.log(err));
   }
+  cancelCourse(event) {
+    this.setState({
+      id: '1',
+      description: '',
+      avgAmount: ''
+    });
+  }
   render() {
-    return (
-      <div>
-        <div>
-          <CustomSelect
-            name="category"
-            value={this.state.category}
-            onChange={this.handleChange}
-          />
-          <label>Description of Expense</label>
-          <input
-            className="form-control"
-            name="description"
-            type="text"
-            value={this.state.description}
-            onChange={this.handleChange}
-            placeholder="Bills included..."
-          />
-          <label>Money Source</label>
-          <input
-            className="form-control"
-            name="description"
-            type="text"
-            value={this.state.moneySource}
-            onChange={this.handleChange}
-          />
-          <label>Auto Pay</label>
-          <input
-            className="form-check-input"
-            type="checkbox"
-            name="autoPay"
-            value={this.state.autoPay}
-            onChange={this.handleChange}
-          />
-          <label>Photo (optional)</label>
-          <input
-            id="statementUpload"
-            type="file"
-            accept="image/*;capture=camera"
-            value={this.state.photo}
-            onChange={this.handleChange}
-          />
-          <br />
-          <button
-            type="button"
-            className="btn btn-primary"
-            id="statementSelect"
-            onClick={this.handleSubmit.bind(this)}
-          >
-            Select
-          </button>
-          <br />
-          <StatementInfo />
+    const { isAuthenticated } = this.props.auth;
+    return isAuthenticated() ? (
+      <div className="container">
+        <br />
+        <div className="row">
+          <div className="col-sm-6 offset-sm-3">
+            <h2 className="text-center">Add A Bill Statement</h2>
+          </div>
+        </div>
+        <br />
+        <div className="row">
+          <div className="col-sm-8 offset-sm-2">
+            <div className="card">
+              <div className="card-body" id="statement-input">
+                <form onSubmit={this.handleSubmit}>
+                  <CustomSelect
+                    name="id"
+                    value={this.state.id}
+                    onChange={this.handleChange}
+                  />
+                  <label>Bill Name</label>
+                  <input
+                    className="form-control"
+                    name="description"
+                    type="text"
+                    value={this.state.description}
+                    onChange={this.handleChange}
+                    placeholder="Visa, Power Company..."
+                  />
+                  <label>Bill Amount</label>
+                  <input
+                    className="form-control"
+                    name="avgAmount"
+                    type="text"
+                    value={this.state.avgAmount}
+                    onChange={this.handleChange}
+                    placeholder="00.00"
+                  />
+                  <label>Paid From Account</label>
+                  <input
+                    className="form-control"
+                    name="description"
+                    type="text"
+                    value={this.state.moneySource}
+                    onChange={this.handleChange}
+                    placeholder="Bank/Credit Card"
+                  />
+                  <Checkbox
+                    id="auto-pay"
+                    type="checkbox"
+                    value={this.state.autoPay}
+                    onChange={this.handleChange}
+                  />
+                  <br />
+                  <label>Upload Image or File</label>
+                  <input
+                    id="statementUpload"
+                    type="file"
+                    accept="image/*;capture=camera"
+                    value={this.state.photo}
+                    onChange={this.handleChange}
+                  />
+                  <br />
+                  <br />
+                  <input
+                    className="btn btn-warning btn-lg"
+                    type="submit"
+                    value="Submit"
+                    onClick={this.cancelCourse}
+                  />
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    );
+    ) : null;
   }
 }
 

@@ -57,8 +57,13 @@ class Navbar extends Component {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to="/statements" className="nav-link">
-                  Statements
+                <Link to="/statementInfo" className="nav-link">
+                  View Statements
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/statement" className="nav-link">
+                  Add Statements
                 </Link>
               </li>
               {!isAuthenticated() ? (

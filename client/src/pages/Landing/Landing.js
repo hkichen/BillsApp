@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Landing.css';
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 import image from '../../Images/folder-icon.png';
 import './Landing.css';
 
@@ -11,7 +11,7 @@ class Landing extends Component {
         <div className="container">
           <br />
           <br />
-          <div className="row">
+          {/* <div className="row">
             <div className="col-sm-4 offset-sm-4">
               <div className="card text-center" id="sign-up">
                 <h3>
@@ -21,7 +21,7 @@ class Landing extends Component {
                 </h3>
               </div>
             </div>
-          </div>
+          </div> */}
           <br />
           <br />
           <div className="row">

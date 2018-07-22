@@ -5,14 +5,14 @@ const CustomSelect = props => {
     <div className="form-group">
       <label>Expense Category</label>
       <select className="custom-select" {...props}>
-        <option value="Rent/Mortgage">Rent/Mortgage</option>
-        <option value="Utilities">Utilities</option>
-        <option value="Car/Transportation">Car/Transportation</option>
-        <option value="Food/Dining">Food/Dining</option>
-        <option value="Credit Cards">Credit Cards</option>
-        <option value="Loans">Loans</option>
-        <option value="Medical/Health">Medical/Health</option>
-        <option value="Other">Other</option>
+        <option value="1">Rent/Mortgage</option>
+        <option value="2">Utilities</option>
+        <option value="3">Car/Transportation</option>
+        <option value="4">Food/Dining</option>
+        <option value="5">Credit Cards</option>
+        <option value="6">Loans</option>
+        <option value="7">Medical/Health</option>
+        <option value="8">Other</option>
       </select>
     </div>
   );

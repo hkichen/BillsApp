@@ -6,13 +6,14 @@ class ExpenseInput extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      category: 'Rent/Mortgage',
+      id: '1',
       description: '',
       avgAmount: ''
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.cancelCourse = this.cancelCourse.bind(this);
   }
 
   handleChange(event) {
@@ -28,10 +29,10 @@ class ExpenseInput extends Component {
   }
 
   handleSubmit(event) {
-    // event.preventDefault();
+    event.preventDefault();
     console.log('submit works');
     const newExpense = {
-      category: this.state.category,
+      id: this.state.id,
       description: this.state.description,
       avgAmount: this.state.avgAmount
     };
@@ -44,13 +45,21 @@ class ExpenseInput extends Component {
       })
       .catch(err => console.log(err));
   }
+
+  cancelCourse(event) {
+    this.setState({
+      id: '1',
+      description: '',
+      avgAmount: ''
+    });
+  }
   render() {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
           <CustomSelect
-            name="category"
-            value={this.state.category}
+            name="id"
+            value={this.state.id}
             onChange={this.handleChange}
           />
           <label>Description of Expense</label>
@@ -76,6 +85,7 @@ class ExpenseInput extends Component {
             className="btn btn-warning btn-lg"
             type="submit"
             value="Submit"
+            onClick={this.cancelCourse}
           />
         </form>
       </div>

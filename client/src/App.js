@@ -6,6 +6,7 @@ import Dashboard from './pages/Dashboard';
 import AddExpense from './pages/AddExpense';
 import Navbar from './components/Navbar';
 import Statement from './components/Statement';
+import StatementInfo from './components/StatementInfo';
 import Footer from './components/Footer';
 import Profile from './pages/Profile';
 import Signup from './pages/Signup';
@@ -44,6 +45,10 @@ export const AppRouter = () => {
         <Route
           path="/statement"
           render={props => <Statement auth={auth} {...props} />}
+        />
+        <Route
+          path="/statementInfo"
+          render={props => <StatementInfo auth={auth} {...props} />}
         />
         <Route
           path="/profile"

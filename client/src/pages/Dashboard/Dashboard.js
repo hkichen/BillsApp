@@ -13,16 +13,51 @@ class Dashboard extends Component {
   }
   componentWillMount() {
     API.getExpense()
-      .then(res => {
-        res.json();
-        let amount = res.data;
-        let i = 0;
-        for (i = 0; i < amount.length; i++);
-        console.log(amount[i].avgAmount);
-      })
       .then(
-        result => {
-          this.setState({});
+        res => {
+          console.log('getting res');
+
+          let amount = res.data;
+          console.log(amount);
+          let i = 0;
+          const amountArr = [];
+          for (i = 0; i < amount.length; i++) {
+            console.log(amount[i].avgAmount);
+            amountArr.push(amount[i].avgAmount);
+          }
+          const amountIntArr = amountArr.map(x => Number.parseInt(x, 10));
+          console.log(amountIntArr);
+
+          this.setState({
+            chartData: {
+              labels: [
+                'Rent/Mortgage',
+                'Utilities',
+                'Car/Transportation',
+                'Food/Dining',
+                'Credit Cards',
+                'Loans',
+                'Medical/Health',
+                'Other'
+              ],
+              datasets: [
+                {
+                  label: 'Total Expense by Percentage',
+                  data: [amountIntArr],
+                  backgroundColor: [
+                    'rgb(17,90,86)',
+                    'rgb(75,196,210)',
+                    'rgb(235,221,25)',
+                    'rgb(44,207,44)',
+                    'rgb(235,141,19)',
+                    'rgb(30,113,173)',
+                    'rgb(152,229,46)',
+                    'rgb(45,102,9)'
+                  ]
+                }
+              ]
+            }
+          });
         },
         // Note: it's important to handle errors here
         // instead of a catch() block so that we don't swallow
