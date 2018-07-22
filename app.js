@@ -42,6 +42,7 @@ app.use(cors());
 
 app.use(express.static(path.join(__dirname, 'client/build')));
 
+
 app.use('/api/expense', expense);
 app.use('/api/users', users);
 app.use('/api/statements', statements);

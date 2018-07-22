@@ -25,21 +25,20 @@ const handleAuthentication = (nextState, replace) => {
 export const AppRouter = () => {
   
   return (
-    <Router history={history} component={Landing}>
-      <div>
-        {/* <Navbar auth={auth} /> */}
-        <Route path="/" render={(props) => <Navbar auth={auth} {...props} />} />
-        <Route path="/landing" render={(props) => <Landing auth={auth} {...props} />} />
-        <Route path="/dashboard" render={(props) => <Dashboard auth={auth} {...props} />} />
-        <Route path="/addexpense" render={(props) => <AddExpense auth={auth} {...props} />} />
-        <Route path="/profile" render={(props) => <Profile auth={auth} {...props} />} />
-        <Route path="/profileform" render={(props) => <ProfileForm auth={auth} {...props} />} />
-        <Route path="/signup" component={Signup} />
-        <Route path="/callback" render={(props) => {
-          handleAuthentication(props);
-          return <Callback {...props} /> 
-        }}/>
-      </div>
+    <Router history={history}>
+    <div>
+    <Route path="/" render={(props) => <Navbar auth={auth} {...props} />} />
+    <Route path="/landing" render={(props) => <Landing auth={auth} {...props} />} />
+    <Route path="/dashboard" render={(props) => <Dashboard auth={auth} {...props} />} />
+    <Route path="/addexpense" render={(props) => <AddExpense auth={auth} {...props} />} />
+    <Route path="/profile" render={(props) => <Profile auth={auth} {...props} />} />
+    <Route path="/profileform" render={(props) => <ProfileForm auth={auth} {...props} />} />
+    <Route path="/signup" component={Signup} />
+    <Route path="/callback" render={(props) => {
+      handleAuthentication(props);
+      return <Callback {...props} /> 
+    }}/>
+    </div>
     </Router>
   );
 }
