@@ -17,6 +17,8 @@ export default {
   // createUser: function(userData) {
   //   return axios.post('/api/users', userData);
   // },
+
+  //sub is the user_id property when you get the profile info for user
   getMeta: function(sub) { 
     const url = '/api/users/' + sub;
     return axios({
