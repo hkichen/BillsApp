@@ -12,7 +12,10 @@ class Statement extends Component {
     this.state = {
       id: '1',
       description: '',
-      avgAmount: ''
+      avgAmount: '',
+      moneySource: '',
+      autoPay: '',
+      photo: ''
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -42,7 +45,11 @@ class Statement extends Component {
       autoPay: this.state.autoPay,
       photo: this.state.photo
     };
-    API.
+    API.addStatements(newStatement, this.state.id)
+      .then(res =>{
+        console.log("You added " + JSON.stringify(newStatement));
+      })
+      .catch(err => console.log(err));
   }
 
   render() {

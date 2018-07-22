@@ -11,7 +11,10 @@ export default {
   //gets expenses for pie chart
   getExpense: function() {
     return axios.get('/api/expense/');
-  }
+  },
 
-  
+  addStatements: function(statementData) {
+    return axios.post("/api/statments/", statementData);
+
+  }  
 };
