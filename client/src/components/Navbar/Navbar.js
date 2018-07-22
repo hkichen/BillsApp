@@ -25,7 +25,7 @@ class Navbar extends Component {
       <div>
       <nav className="navbar navbar-expand-lg" id="navbar">
         <Link to="/landing" className="navbar-brand">
-          <img src={image} width="24" height="24" alt="" />BILL BUSTER
+          <img className="logo" src={image} width="26" height="26" alt="" />BILL BUSTER
         </Link>
 
         <button
