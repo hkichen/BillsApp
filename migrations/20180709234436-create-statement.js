@@ -28,7 +28,7 @@ module.exports = {
         type: Sequelize.BOOLEAN,
         notEmpty: true
       },
-      img: {
+      photo: {
         type: Sequelize.BLOB,
         notEmpty: true
       },

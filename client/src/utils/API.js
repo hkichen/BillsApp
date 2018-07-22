@@ -46,7 +46,6 @@ export default {
     })
   },
 
-
   //updates new Expense to database
   createExpense: function(expenseData) {
     return axios.put('/api/expense/', expenseData);
@@ -54,5 +53,10 @@ export default {
   getExpense: function(expenseData) {
     console.log('we hit getExpense');
     return axios.get('/api/expense/', expenseData);
+  },
+
+  addStatements: function(statementData) {
+    return axios.post("/api/statments/", statementData);
+
   }
 };
