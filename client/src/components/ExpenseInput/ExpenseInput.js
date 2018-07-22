@@ -34,9 +34,7 @@ class ExpenseInput extends Component {
       avgAmount: this.state.avgAmount
     };
     API.updateExpense(newExpense, this.state.id)
-      .then(res => {
-        console.log('this is:' + JSON.stringify(newExpense));
-      })
+      .then(res => {})
       .catch(err => console.log(err));
   }
 

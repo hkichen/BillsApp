@@ -2,8 +2,6 @@ import React from 'react';
 import { Component } from 'react';
 import CustomSelect from '../CustomSelect';
 import Checkbox from '../CheckBox';
-//import StatementInfo from '../StatementInfo';
-// import { Result } from 'range-parser';
 import API from '../../utils/API';
 
 class Statement extends Component {
@@ -19,25 +17,16 @@ class Statement extends Component {
     const target = event.target;
     const value = target.value;
     const name = target.name;
-    console.log(target);
 
     this.setState({
       [name]: value
     });
-    console.log(this.state);
   }
   handleSubmit(event) {
     event.preventDefault();
-    console.log(this.state);
-    //componentWillMount()
-    API.addStatements()
-      .then(res => {
-        console.log(res);
-        //res.json();
-        //this.setState({
 
-        //});
-      })
+    API.addStatements()
+      .then(res => {})
       .catch(err => console.log(err));
   }
 

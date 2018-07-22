@@ -1,5 +1,4 @@
 import axios from 'axios';
-//import { privateFetch } from '../Auth/AuthUtil';
 
 export default {
   //updates new Expense to database
