@@ -1,14 +1,29 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './Profile.css';
+import API from '../../utils/API';
 
 class Profile extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { metadata: {} };
+  }
   componentWillMount() {
     this.setState({ profile: {} });
     const { userProfile, getProfile } = this.props.auth;
     if (!userProfile) {
       getProfile((err, profile) => {
         this.setState({ profile });
+        //console.log(profile)
+
+        const subArray = profile.sub.split('|');
+        const sub = subArray[0] + '%7C' + subArray[1];
+
+        API.getMeta(sub)
+          .then(res => {
+            this.setState({ metadata: res.data.user_metadata || {} });
+          })
+          .catch(err => console.log(err));
       });
     } else {
       this.setState({ profile: userProfile });

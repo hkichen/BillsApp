@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import image from '../../Images/folder-icon.png';
+import Landing from '../../pages/Landing';
 import('./Navbar.css');
 
 class Navbar extends Component {
@@ -23,7 +24,7 @@ class Navbar extends Component {
       <div>
         <nav className="navbar navbar-expand-lg" id="navbar">
           <Link to="/landing" className="navbar-brand">
-            <img src={image} width="24" height="24" alt="" />BILL BUSTER
+            <img src={image} width="26" height="26" alt="" />BILL BUSTER
           </Link>
 
           <button
@@ -84,6 +85,7 @@ class Navbar extends Component {
             </ul>
           </div>
         </nav>
+        {!isAuthenticated() ? <Landing /> : null}
         <div className="bg-img">
           <div className="container" />
         </div>

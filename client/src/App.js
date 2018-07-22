@@ -26,8 +26,6 @@ const handleAuthentication = (nextState, replace) => {
 export const AppRouter = () => {
   return (
     <Router history={history} component={Landing}>
-      {/* <Navbar auth={auth} /> */}
-      {/* <Navbar auth={auth} {...props} />} /> */}
       <div>
         <Route path="/" render={props => <Navbar auth={auth} {...props} />} />
         <Route
