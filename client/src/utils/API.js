@@ -1,24 +1,62 @@
 import axios from 'axios';
 
 export default {
-  //Get all users
-  getUsers: function() {
-    return axios.get('/api/users');
+  // //Get all users
+  // getUsers: function() {
+  //   return axios.get('/api/users');
+  // },
+  // // Get a user by id
+  // getUSer: function(id) {
+  //   return axios.get('/api/users/' + id);
+  // },
+  // // Deletes user by id
+  // deleteUser: function(id) {
+  //   return axios.delete('/api/users/' + id);
+  // },
+  // // adds new user to the database
+  // createUser: function(userData) {
+  //   return axios.post('/api/users', userData);
+  // },
+
+  //sub is the user_id property when you get the profile info for user
+  getMeta: function(sub) { 
+    const url = '/api/users/' + sub;
+    return axios({
+      method: 'get',
+      url: url,
+      headers: {
+        authorization:`Bearer ${localStorage.getItem('access_token')}`
+      }
+    })
   },
-  // Get a user by id
-  getUSer: function(id) {
-    return axios.get('/api/users/' + id);
+
+  updateMeta: function(data) {
+    const url = '/api/users/' + data.sub;
+    return axios({
+      method: 'post',
+      url: url,
+      data: {
+        lastName: data.lastName,
+        firstName: data.firstName,
+        monthlyIncome: data.monthlyIncome
+      },
+      headers: {
+        'Authorization': `Bearer ${localStorage.getItem('access_token')}`
+      }
+    })
   },
-  // Deletes user by id
-  deleteUser: function(id) {
-    return axios.delete('/api/users/' + id);
+
+  //updates new Expense to database
+  createExpense: function(expenseData) {
+    return axios.put('/api/expense/', expenseData);
   },
-  // adds new user to the database
-  createUser: function(userData) {
-    return axios.post("/api/users", userData);
+  getExpense: function(expenseData) {
+    console.log('we hit getExpense');
+    return axios.get('/api/expense/', expenseData);
   },
 
   addStatements: function(statementData) {
     return axios.post("/api/statments/", statementData);
+
   }
 };

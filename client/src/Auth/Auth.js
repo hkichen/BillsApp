@@ -42,7 +42,7 @@ export default class Auth {
     this.auth0.parseHash((err, authResult) => {
       if (authResult && authResult.accessToken && authResult.idToken) {
         this.setSession(authResult);
-        history.replace('/landing');
+        history.replace('/dashboard');
       } else if (err) {
         history.replace('/landing');
         console.log(err);
