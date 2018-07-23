@@ -13,6 +13,7 @@ export default {
     });
   },
 
+  //request to update metadate to the backend server
   updateMeta: function(data) {
     const url = '/api/users/' + data.sub;
     return axios({
@@ -40,5 +41,11 @@ export default {
   },
   addStatements: function(statementData) {
     return axios.post('/api/statments/', statementData);
+  },
+  getExpenses: function() {
+    return axios.get('/api/expense/' + localStorage.getItem('userId'))
+  },
+  createBulkExpenses: function() {
+    return axios.post('/api/expense/bulk/' + localStorage.getItem('userId'));
   }
 };
