@@ -18,7 +18,13 @@ class Landing extends Component {
                 <div className="card-body text-center" id="info-text">
                   <h3>
                     Welcome to <br />
-                    <img className="miniLogo" src={image} width="24" height="24" alt="" />
+                    <img
+                      className="miniLogo"
+                      src={image}
+                      width="30"
+                      height="30"
+                      alt=""
+                    />
                     <span id="logo">BILL BUSTER</span>
                   </h3>
                   <p>
