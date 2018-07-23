@@ -12,3 +12,13 @@
 .navbar-toggler {
   color: white;
 }
+
+.log-in-out:hover {
+  background: #00470f;
+  cursor: pointer;
+}
+
+.logo {
+  margin-bottom: 9px;
+  margin-right: 3px;
+}

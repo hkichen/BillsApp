@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Chart from '../../components/Chart/Chart';
-//import API from '../../utils/API';
+import API from '../../utils/API';
 import './Dashboard.css';
 
 class Dashboard extends Component {
@@ -11,55 +11,70 @@ class Dashboard extends Component {
       chartData: {}
     };
   }
-  // componentWillMount() {
-  //   API.getExpense()
-  //   .then(res => res.json())
-  //   .then(
-  //     result => {
-  //       this.setState({
-  //         isLoaded: true,
-  //         items: result.items
-  //       }).catch(err => console.log(err));
 
-  // }
-  componentWillMount() {
+  getChartData() {
+    API.getExpense()
+      .then(
+        res => {
+          let amount = res.data;
+          let i = 0;
+          const amountArr = [];
+          for (i = 0; i < amount.length; i++) {
+            amountArr.push(amount[i].avgAmount);
+          }
+          const amountIntArr = amountArr.map(x => Number.parseInt(x, 10));
+
+          this.setState({
+            chartData: {
+              labels: [
+                'Rent/Mortgage',
+                'Utilities',
+                'Car/Transportation',
+                'Food/Dining',
+                'Credit Cards',
+                'Loans',
+                'Medical/Health',
+                'Other'
+              ],
+              datasets: [
+                {
+                  label: 'Total Expense by Percentage',
+                  data: amountIntArr,
+                  backgroundColor: [
+                    'rgb(17,90,86)',
+                    'rgb(75,196,210)',
+                    'rgb(235,221,25)',
+                    'rgb(44,207,44)',
+                    'rgb(235,141,19)',
+                    'rgb(30,113,173)',
+                    'rgb(152,229,46)',
+                    'rgb(45,102,9)'
+                  ]
+                }
+              ]
+            }
+          });
+        },
+        // Note: it's important to handle errors here
+        // instead of a catch() block so that we don't swallow
+        // exceptions from actual bugs in components.
+        error => {
+          this.setState({
+            isLoaded: true,
+            error
+          });
+        }
+      )
+      .catch(err => console.log(err));
+  }
+
+  componentDidMount() {
     this.getChartData();
   }
 
-  getChartData() {
-    this.setState({
-      chartData: {
-        labels: [
-          'Rent/Mortgage',
-          'Utilities',
-          'Car/Transportation',
-          'Food/Dining',
-          'Credit Cards',
-          'Loans',
-          'Medical/Health',
-          'Other'
-        ],
-        datasets: [
-          {
-            label: 'Total Expense by Percentage',
-            data: [30, 5, 15, 20, 15, 5, 5, 5],
-            backgroundColor: [
-              'rgb(17,90,86)',
-              'rgb(75,196,210)',
-              'rgb(235,221,25)',
-              'rgb(44,207,44)',
-              'rgb(235,141,19)',
-              'rgb(30,113,173)',
-              'rgb(152,229,46)',
-              'rgb(45,102,9)'
-            ]
-          }
-        ]
-      }
-    });
-  }
   render() {
-    return (
+    const { isAuthenticated } = this.props.auth;
+    return isAuthenticated() ? (
       <div className="container">
         <div className="row">
           <div className="col-sm-6 offset-sm-3">
@@ -115,7 +130,7 @@ class Dashboard extends Component {
           </div>
         </div>
       </div>
-    );
+    ) : null;
   }
 }
 

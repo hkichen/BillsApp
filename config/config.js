@@ -1,7 +1,7 @@
-{
+module.exports = {
   "development": {
     "username": "root",
-    "password": "root1234",
+    "password": process.env.DB_PASS,
     "database": "billsapp",
     "host": "127.0.0.1",
     "dialect": "mysql"

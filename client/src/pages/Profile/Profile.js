@@ -1,49 +1,59 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './Profile.css';
+import API from '../../utils/API';
+
+
 
 class Profile extends Component {
-  
-  //dummy data
-  state = {
-    firstName: "Lina",
-    lastName: "Kichen",
-    email: "me@me.com",
-    password:"password"
+    constructor(props) {
+    super(props);
+    this.state = {metadata: {}}
   }
-  
-  // componentDidMount() {
-  //   fetch('/api/users/1')
-  //   .then(res => res.json())
-  //   .then(users => this.setState({users: users}));
-  // }
-  
+
+  componentWillMount() {
+    this.setState({ profile: {} });
+    const { userProfile, getProfile } = this.props.auth;
+    if (!userProfile) {
+      getProfile((err, profile) => {
+        this.setState({ profile });
+        console.log(profile)
+
+        const subArray = profile.sub.split("|");
+        const sub = subArray[0]+"%7C"+subArray[1];
+
+        API.getMeta(sub)
+          .then(res => {                   
+            this.setState({metadata: res.data.user_metadata || {}})
+
+          })
+          .catch(err => console.log(err))
+      });
+    } else {
+      this.setState({ profile: userProfile });
+    }
+  }
+     
   render() {
-    console.log(this.state);
-    return (
-      <div className="userInfo">
-          <div className="panel panel-info">
-            <div className="panel-heading">
-              <h5 className="panel-title">{this.state.firstName} {this.state.lastName}</h5>
+    const { profile } = this.state;
+    const { isAuthenticated } = this.props.auth;
+
+    return isAuthenticated() ? (
+      <div className="container">
+        <div className="profile-area">
+          <h1>Profile Information</h1>
+          <div className="infoBody">
+            <img src={profile.picture} alt="profile" />
+            <div>
+              <h4>Name: {this.state.metadata.firstName} {this.state.metadata.lastName} </h4>
+              <h6>Monthly Income: {this.state.metadata.monthlyIncome} </h6>
             </div>
-            
-            <div className="panel-body">
-              <table className="table table-user-information">
-              <tbody>
-                <tr>
-                  <td>Monthly Income: empty for now</td>
-                </tr>
-                <tr>
-                  <td>Email: {this.state.email}</td>
-                </tr>                                                
-              </tbody>
-            </table>
-            <button className="btn btn-warning"><Link to="/profileform">Update Profile Information</Link></button>
           </div>
-          </div>
+          <button className="btn-warning"><Link to="/profileform">Update Profile</Link></button>
+        </div>
       </div>
-    );
+    ):null 
   }
-};
+}
 
 export default Profile;

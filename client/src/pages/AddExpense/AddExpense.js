@@ -4,7 +4,8 @@ import('./AddExpense.css');
 
 class AddExpense extends Component {
   render() {
-    return (
+    const { isAuthenticated } = this.props.auth;
+    return isAuthenticated() ? (
       <div className="bg-img">
         <div className="container">
           <br />
@@ -17,7 +18,7 @@ class AddExpense extends Component {
           <div className="row">
             <div className="col-sm-8 offset-sm-2">
               <div className="card">
-                <div className="card-body">
+                <div className="card-body" id="expense-input">
                   <ExpenseInput />
                 </div>
               </div>
@@ -25,7 +26,7 @@ class AddExpense extends Component {
           </div>
         </div>
       </div>
-    );
+    ) : null;
   }
 }
 export default AddExpense;
