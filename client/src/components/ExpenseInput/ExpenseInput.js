@@ -68,8 +68,9 @@ class ExpenseInput extends Component {
       avgAmount: this.state.avgAmount
     };
     API.updateExpense(newExpense, this.state.id)
-      .then(res => {})
+      .then(res => {window.location.href="/dashboard"})
       .catch(err => console.log(err));
+      
   }
 
   render() {
