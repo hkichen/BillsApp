@@ -1,33 +1,16 @@
 import axios from 'axios';
 
 export default {
-  // //Get all users
-  // getUsers: function() {
-  //   return axios.get('/api/users');
-  // },
-  // // Get a user by id
-  // getUSer: function(id) {
-  //   return axios.get('/api/users/' + id);
-  // },
-  // // Deletes user by id
-  // deleteUser: function(id) {
-  //   return axios.delete('/api/users/' + id);
-  // },
-  // // adds new user to the database
-  // createUser: function(userData) {
-  //   return axios.post('/api/users', userData);
-  // },
-
   //sub is the user_id property when you get the profile info for user
-  getMeta: function(sub) { 
+  getMeta: function(sub) {
     const url = '/api/users/' + sub;
     return axios({
       method: 'get',
       url: url,
       headers: {
-        authorization:`Bearer ${localStorage.getItem('access_token')}`
+        authorization: `Bearer ${localStorage.getItem('access_token')}`
       }
-    })
+    });
   },
 
   updateMeta: function(data) {
@@ -41,22 +24,21 @@ export default {
         monthlyIncome: data.monthlyIncome
       },
       headers: {
-        'Authorization': `Bearer ${localStorage.getItem('access_token')}`
+        Authorization: `Bearer ${localStorage.getItem('access_token')}`
       }
-    })
+    });
   },
 
   //updates new Expense to database
-  createExpense: function(expenseData) {
-    return axios.put('/api/expense/', expenseData);
+  updateExpense: function(data, id) {
+    const url = '/api/expense/' + id;
+    return axios.put(url, data);
   },
-  getExpense: function(expenseData) {
-    console.log('we hit getExpense');
-    return axios.get('/api/expense/', expenseData);
+  //gets expenses for pie chart
+  getExpense: function() {
+    return axios.get('/api/expense/');
   },
-
   addStatements: function(statementData) {
-    return axios.post("/api/statments/", statementData);
-
+    return axios.post('/api/statments/', statementData);
   }
 };

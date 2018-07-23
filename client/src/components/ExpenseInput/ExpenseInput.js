@@ -6,7 +6,7 @@ class ExpenseInput extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      category: 'Rent/Mortgage',
+      id: '1',
       description: '',
       avgAmount: ''
     };
@@ -29,25 +29,22 @@ class ExpenseInput extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    //console.log(this.state);
     const newExpense = {
-      category: this.state.category,
       description: this.state.description,
       avgAmount: this.state.avgAmount
     };
-    API.createExpense({
-      newExpense
-    })
-      .then(res => console.log(newExpense))
+    API.updateExpense(newExpense, this.state.id)
+      .then(res => {})
       .catch(err => console.log(err));
   }
+
   render() {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
           <CustomSelect
-            name="category"
-            value={this.state.category}
+            name="id"
+            value={this.state.id}
             onChange={this.handleChange}
           />
           <label>Description of Expense</label>

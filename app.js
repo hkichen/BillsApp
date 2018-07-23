@@ -19,7 +19,7 @@ var app = express();
 
 const checkJwt = jwt({
   // Dynamically provide a signing key
-  // based on the kid in the header and 
+  // based on the kid in the header and
   // the signing keys provided by the JWKS endpoint.
   secret: jwksRsa.expressJwtSecret({
     cache: true,
@@ -41,7 +41,6 @@ app.use(cookieParser());
 app.use(cors());
 
 app.use(express.static(path.join(__dirname, 'client/build')));
-
 
 app.use('/api/expense', expense);
 app.use('/api/users', users);

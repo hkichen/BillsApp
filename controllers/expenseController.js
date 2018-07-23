@@ -2,12 +2,11 @@ const Expense = require('../models').Expense;
 
 module.exports = {
   update: function(req, res) {
-    Expense.update(req.body)
-      .then(dbExpense => res.json(dbExpense))
-      .catch(err => res.status(422).json(err));
+    Expense.findById(req.params.id).then(function(expense) {
+      expense.update(req.body).then(() => res.json(expense));
+    });
   },
   findAll: function(req, res) {
-    console.log('we hit it');
     Expense.findAll({})
       .then(dbExpense => res.json(dbExpense))
       .catch(err => res.status(422).json(err));

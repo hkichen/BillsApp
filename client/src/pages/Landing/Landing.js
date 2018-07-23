@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import './Landing.css'
-import { Link } from 'react-router-dom';
+import './Landing.css';
+import image from '../../Images/folder-icon.png';
+import './Landing.css';
 
 class Landing extends Component {
   render() {
@@ -9,24 +10,17 @@ class Landing extends Component {
         <div className="container">
           <br />
           <br />
-          <div className="row">
-            <div className="col-sm-4 offset-sm-4">
-              <div className="card text-center" id="sign-up">
-                <h3>
-                  <Link to="/signup" id="link-text">
-                    Sign Up/Log In
-                  </Link>
-                </h3>
-              </div>
-            </div>
-          </div>
           <br />
           <br />
           <div className="row">
             <div className="col-sm-8 offset-sm-2">
               <div className="card" id="log-in">
                 <div className="card-body text-center" id="info-text">
-                  <h3>Welcome to Bill Buster</h3>
+                  <h3>
+                    Welcome to <br />
+                    <img src={image} width="24" height="24" alt="" />
+                    <span id="logo">BILL BUSTER</span>
+                  </h3>
                   <p>
                     Bill Buster is a mobile friendly app that allows users to
                     log in to their virtual filing system. Users can input their

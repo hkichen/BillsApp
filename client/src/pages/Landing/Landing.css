@@ -26,7 +26,7 @@ body {
 #sign-up {
   background: rgba(235, 221, 25, 1);
 }
-#link-text {
+.link-text {
   color: rgba(17, 90, 86, 1);
 }
 .card {
@@ -37,13 +37,7 @@ body {
   background: rgba(17, 90, 86, 1);
   color: white;
 }
-
-/* #log-in {
-  background: rgba(17, 90, 86, 1);
-  color: white;
-} */
-/* #info-text {
-  background: white;
+#logo {
+  font-family: 'Audiowide', 'cursive';
   color: black;
-  margin: 1em;
-} */
+}
