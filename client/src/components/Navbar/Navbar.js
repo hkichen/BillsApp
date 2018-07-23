@@ -72,7 +72,7 @@ class Navbar extends Component {
                   className="nav-item log-in-out"
                   onClick={this.login.bind(this)}
                 >
-                  <div className="nav-link">Log In</div>
+                  <div className="nav-link">Log In/Sign Up</div>
                 </li>
               ) : (
                 <li

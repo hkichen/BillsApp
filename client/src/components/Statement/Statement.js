@@ -52,16 +52,16 @@ class Statement extends Component {
                     value={this.state.id}
                     onChange={this.handleChange}
                   />
-                  <label>Bill Name</label>
+                  <label>Statement Description</label>
                   <input
                     className="form-control"
                     name="description"
                     type="text"
                     value={this.state.description}
                     onChange={this.handleChange}
-                    placeholder="Visa, Power Company..."
+                    placeholder="due on the 20th..."
                   />
-                  <label>Bill Amount</label>
+                  <label>Statement Amount</label>
                   <input
                     className="form-control"
                     name="avgAmount"
@@ -77,7 +77,7 @@ class Statement extends Component {
                     type="text"
                     value={this.state.moneySource}
                     onChange={this.handleChange}
-                    placeholder="Bank/Credit Card"
+                    placeholder="Suntrusk checking account"
                   />
                   <Checkbox
                     id="auto-pay"
