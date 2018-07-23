@@ -44,7 +44,7 @@ class Profile extends Component {
             <img src={profile.picture} alt="profile" />
             <div>
               <h4>Name: {this.state.metadata.firstName} {this.state.metadata.lastName} </h4>
-              <h6>Monthly Income: {this.state.metadata.monthlyIncome} </h6>
+              <h6>Monthly Income: ${this.state.metadata.monthlyIncome} </h6>
             </div>
           </div>
           <button className="btn-warning"><Link to="/profileform">Update Profile</Link></button>

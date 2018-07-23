@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import ExpenseInput from '../../components/ExpenseInput/ExpenseInput';
 import('./AddExpense.css');
 
+
 class AddExpense extends Component {
+
   render() {
     const { isAuthenticated } = this.props.auth;
     return isAuthenticated() ? (
