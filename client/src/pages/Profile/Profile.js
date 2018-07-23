@@ -53,10 +53,10 @@ class Profile extends Component {
                   <br />
                   <br />
                   <h3>
-                    Name: {this.state.metadata.firstName}{' '}
-                    {this.state.metadata.lastName}{' '}
+                    {this.state.metadata.firstName}
+                    {this.state.metadata.lastName}
                   </h3>
-                  <h5>Monthly Income: {this.state.metadata.monthlyIncome} </h5>
+                  <h5>Monthly Income: ${this.state.metadata.monthlyIncome} </h5>
                   <button className=" btn btn-warning btn-lg">
                     <Link to="/profileform" className="link-text">
                       Update
