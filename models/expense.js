@@ -12,11 +12,14 @@ module.exports = (sequelize, DataTypes) => {
     description: {
       type: DataTypes.TEXT,
       notEmpty: true
-    }
+    },
+    userId: {
+      type: DataTypes.TEXT,
+      notEmpty: true
+    },
   });
   Expense.associate = function(models) {
     // associations can be defined here
-    Expense.belongsTo(models.User);
     Expense.hasMany(models.Statement, { as: "Statements" });
   };
   return Expense;
