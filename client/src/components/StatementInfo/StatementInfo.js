@@ -55,10 +55,10 @@ class StatementInfo extends Component {
         <br />
         <div className="row">
           <div className="col-sm-8 offset-sm-2">
-            <div className="card">
+            <div className="card" id="statement-card">
               <div className="card-body" id="statement-table">
                 <div className="table-repsponsive-sm">
-                  <table className="table">
+                  <table className="table table-hover">
                     <thead>
                       <tr>
                         <th scope="col">#</th>
