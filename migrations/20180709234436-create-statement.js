@@ -32,6 +32,10 @@ module.exports = {
         type: Sequelize.BLOB,
         notEmpty: true
       },
+      userId: {
+        type: Sequelize.TEXT,
+        notEmpty: true
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
