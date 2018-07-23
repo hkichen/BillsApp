@@ -23,13 +23,14 @@ module.exports = {
   },
 
   findByUserID: function(req, res) {
-    Expense.findall({
+    console.log(req.params.id)
+    Expense.findAll({
       where: {
-        userId: "google-oauth2%7C117865706151901461462"
+        userId: req.params.id
       }
     })
-      .then(dbExpense => res.json(dbExpense))
-      .catch(err => res.send(err));
+    .then(expenses => res.json(expenses))
+    .catch(err => res.json(err))
   },
   
   bulkCreatewithID: function(req, res) {
@@ -37,7 +38,7 @@ module.exports = {
       category: 'Rent/Mortgage',
       avgAmount: 1200.00,
       description: 'Suntrust Bank, Piedment Condo',
-      userId: 'google-oauth2%7C117865706151901461462',
+      userId: req.params.id,
       createdAt:'2018-07-15',
       updatedAt:'2018-07-15'
     },
@@ -45,7 +46,7 @@ module.exports = {
       category: 'Utilities',
       avgAmount: 200.00,
       description: 'Georgie Power, Comcast',
-      userId: 'google-oauth2%7C117865706151901461462',
+      userId: req.params.id,
       createdAt:'2018-07-15',
       updatedAt:'2018-07-15'
     },
@@ -53,7 +54,7 @@ module.exports = {
       category: 'Car/Transportation',
       avgAmount: 240.00,
       description: '2018 Subaru Forester, car payment',
-      userId: 'google-oauth2%7C117865706151901461462',
+      userId: req.params.id,
       createdAt:'2018-07-15',
       updatedAt:'2018-07-15'
     },
@@ -61,7 +62,7 @@ module.exports = {
       category: 'Food/Dining',
       avgAmount: 400.00,
       description: 'Work lunches and groceries',
-      userId: 'google-oauth2%7C117865706151901461462',
+      userId: req.params.id,
       createdAt:'2018-07-15',
       updatedAt:'2018-07-15'
     },
@@ -69,7 +70,7 @@ module.exports = {
       category: 'Credit Card',
       avgAmount: 300.00,
       description: 'VISA, AMEX',
-      userId: 'google-oauth2%7C117865706151901461462',
+      userId: req.params.id,
       createdAt:'2018-07-15',
       updatedAt:'2018-07-15'
     },
@@ -77,7 +78,7 @@ module.exports = {
       category: 'Loans',
       avgAmount: 120.00,
       description: 'School loan',
-      userId: 'google-oauth2%7C117865706151901461462',
+      userId: req.params.id,
       createdAt:'2018-07-15',
       updatedAt:'2018-07-15'
     },
@@ -85,7 +86,7 @@ module.exports = {
       category: 'Medical/Health',
       avgAmount: 400.00,
       description: 'Insurance premiums',
-      userId: 'google-oauth2%7C117865706151901461462',
+      userId: req.params.id,
       createdAt:'2018-07-15',
       updatedAt:'2018-07-15'
     },
@@ -93,7 +94,7 @@ module.exports = {
       category: 'Other',
       avgAmount: 300.00,
       description: 'Cell phone, Gym membership',
-      userId: 'google-oauth2%7C117865706151901461462',
+      userId: req.params.id,
       createdAt:'2018-07-15',
       updatedAt:'2018-07-15'
     },
