@@ -18,12 +18,11 @@ class ProfileForm extends Component {
     });
   };
 
-  componentWillMount() {
+  componentDidMount() {
     const { getProfile } = this.props.auth;
 
     getProfile((err, profile) => {
-      const subArray = profile.sub.split("|");
-      const sub = subArray[0]+"%7C"+subArray[1];
+      const sub = profile.sub;
       API.getMeta(sub)
         .then(res => {
           const data = res.data.user_metadata || {};
