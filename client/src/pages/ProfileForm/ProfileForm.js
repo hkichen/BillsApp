@@ -65,6 +65,7 @@ class ProfileForm extends Component {
                   <form className="updateProfile">
                     <label>First Name</label>
                     <input
+                      className="form-control"
                       value={this.state.firstName}
                       onChange={this.handleInputChange}
                       name="firstName"
@@ -72,6 +73,7 @@ class ProfileForm extends Component {
 
                     <label>Last Name</label>
                     <input
+                      className="form-control"
                       value={this.state.lastName}
                       onChange={this.handleInputChange}
                       name="lastName"
@@ -79,6 +81,7 @@ class ProfileForm extends Component {
 
                     <label>Monthly Income</label>
                     <input
+                      className="form-control"
                       value={this.state.monthlyIncome}
                       onChange={this.handleInputChange}
                       type="number"
