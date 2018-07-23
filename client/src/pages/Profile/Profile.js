@@ -18,9 +18,7 @@ class Profile extends Component {
       getProfile((err, profile) => {
         this.setState({ profile });
         console.log(profile)
-
-        const subArray = profile.sub.split("|");
-        const sub = subArray[0]+"%7C"+subArray[1];
+        const sub = profile.sub;
 
         API.getMeta(sub)
           .then(res => {                   
