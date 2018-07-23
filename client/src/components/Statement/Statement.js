@@ -32,6 +32,7 @@ class Statement extends Component {
 
   render() {
     const { isAuthenticated } = this.props.auth;
+    
     return isAuthenticated() ? (
       <div className="container">
         <br />
