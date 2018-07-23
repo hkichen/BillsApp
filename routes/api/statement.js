@@ -7,4 +7,9 @@ const statementController = require('../../controllers').statement;
 router.get('/', statementController.findAll);
 router.post('/', statementController.create);
 
+//create a new statement that has a userId and ExpenseId
+router.get('/:userId/:expenseId', statementController.findWithIds);
+
+//create a new statement with userId and ExpenseId
+router.post('/:userId/:expenseId', statementController.createWithIds);
 module.exports = router;
