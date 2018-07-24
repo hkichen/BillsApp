@@ -93,8 +93,7 @@ Each developer handled separate components of the app.
 
 3. Ryan: 
 - creating the interaction inside of each bill category and the add statement form 
-- handling statement submission to database, 
-- setting up functionality to access computer/phone camera to take photos
+- handling statement submission to database
 - storing images in database
 
 ### Future Features
@@ -104,5 +103,8 @@ Each developer handled separate components of the app.
 
 3. Display statements that have been uploaded and stored in the database.
 
+4. Set up a reminder system for when bills are due and a notice for when auto-pay bills have been sent in.
+
+5. Allowing users to take pictures of their paper statements and store them in the database.
 
 
