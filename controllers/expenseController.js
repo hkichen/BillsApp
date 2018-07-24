@@ -2,8 +2,6 @@ const Expense = require('../models').Expense;
 
 module.exports = {
   update: function(req, res) {
-    console.log('hit the controller');
-    console.log(req.params.id);
     Expense.findById(req.params.id).then(function(expense) {
       expense.update(req.body).then(() => res.json(expense));
     });

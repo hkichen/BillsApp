@@ -25,14 +25,22 @@ cd into the repo
 cd client
 npm start
 ```
+* This project uses Sequelize, and running it involves installing the sequelize-cli and mysql2 packages stored globally
 
-### Developers
-- John Waymire
-- Lina Kichen
-- Ryan McKenzie
+```
+npm install -g sequelize-cli mysql2
+```
 
-### App configuration
-Bill Buster uses GET and POST routes to handle data on a Express server connected to a mySQL database using a Sequelize ORM. Rendering of the app is handled by React and react-boostrap. Built using CRUD and MVP practices, Bill Buster is an example of a full stack MERN app.
+* To run the sequelize migrations and the seeder file, cd into the root folder:
+```
+sequelize db:migrate
+sequelize db:seed:all
+```
+
+### App Information
+Bill Buster uses GET and POST routes to handle data on a Express server connected to a mySQL database using a Sequelize ORM. It also sends GET and POST requests to Auth0's API in order to get and update private user information. Rendering of the app is handled by React and react-boostrap. Bills Buster is built using CRUD and MVP practices and is an example of a full stack MERN app.
+
+Because this project delt with sensitive and private information, we largely focused on building an app with protected routes, both on the front end and back end. By using Auth0, users cannot view their data unless logged in, and all api requests require an authorization header with a JSON web token specifically issued to a user when logged in. Passwords to our local databases and API calls are stored as ENV.
 
 ### Technologies (found in our package-json files)
 - Body-Parser
@@ -40,12 +48,17 @@ Bill Buster uses GET and POST routes to handle data on a Express server connecte
 - Express
 - MySQL2
 - Nodemon
-- Passport
-- JWK
+- Auth0
+- JWT
+- Axios
 - Sequelize
 - Sequelize-Cli
 - React
 - React-boostrap
+- Morgan
+- express-jwt
+- express-jwt-authz
+- jwks-rsa
 
 
 ### Components and Tasks
@@ -55,7 +68,11 @@ Each developer handled separate components of the app.
 
 2. John:  Home page rendering that displays pie chart, forms for adding/updating bill categories and handling those changes to the database, logo design, app theme
 
-3. Ryan: creating the interaction inside of each bill category and the add statement form, handling statement submission to database, setting up functionality to access computer/phone camera to take photos, storing images in database
+3. Ryan: 
+- creating the interaction inside of each bill category and the add statement form 
+- handling statement submission to database, 
+- setting up functionality to access computer/phone camera to take photos
+- storing images in database
 
 ### Future Features
 1. Currently we have predefined bill categories that the user has access to, but we would like to allow users to create their own categories and store specific statements pertenant to it. This is especially useful for our Utilities category, which currenlt stores many types of utility bills. This feature would definitely give the user more control over how they want to store their information. This would also make rendering of the pie chart more accurate as well.

@@ -2,8 +2,6 @@ import React from 'react';
 import { Component } from 'react';
 import CustomSelect from '../CustomSelect';
 import Checkbox from '../CheckBox';
-//import StatementInfo from '../StatementInfo';
-// import { Result } from 'range-parser';
 import API from '../../utils/API';
 
 class Statement extends Component {
@@ -24,14 +22,12 @@ class Statement extends Component {
 
   handleChange(event) {
     const target = event.target;
-    const value = target.type === 'select' ? target.selected : target.value;
+    const value = target.value;
     const name = target.name;
-    console.log(target);
 
     this.setState({
       [name]: value
     });
-    console.log(this.state);
   }
   handleSubmit(event) {
     event.preventDefault();
@@ -54,6 +50,7 @@ class Statement extends Component {
 
   render() {
     const { isAuthenticated } = this.props.auth;
+    
     return isAuthenticated() ? (
       <div className="container">
         <br />
@@ -109,6 +106,7 @@ class Statement extends Component {
                   <br />
                   <label>Upload Image or File</label>
                   <input
+                    className="form-control"
                     id="statementUpload"
                     type="file"
                     accept="image/*;capture=camera"
