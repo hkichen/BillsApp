@@ -42,7 +42,6 @@ class Statement extends Component {
             <h2 className="text-center">Add A Bill Statement</h2>
           </div>
         </div>
-        <br />
         <div className="row">
           <div className="col-sm-8 offset-sm-2">
             <div className="card">
@@ -74,7 +73,7 @@ class Statement extends Component {
                   <label>Paid From Account</label>
                   <input
                     className="form-control"
-                    name="description"
+                    name="moneySource"
                     type="text"
                     value={this.state.moneySource}
                     onChange={this.handleChange}
@@ -90,13 +89,13 @@ class Statement extends Component {
                   <label>Upload Image or File</label>
                   <input
                     className="form-control"
+                    name="photo"
                     id="statementUpload"
                     type="file"
                     accept="image/*;capture=camera"
                     value={this.state.photo}
                     onChange={this.handleChange}
                   />
-                  <br />
                   <br />
                   <input
                     className="btn btn-warning btn-lg"

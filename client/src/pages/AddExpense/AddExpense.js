@@ -13,7 +13,6 @@ class AddExpense extends Component {
             <h2 className="text-center">Update Expenses</h2>
           </div>
         </div>
-        <br />
         <div className="row">
           <div className="col-sm-8 offset-sm-2">
             <div className="card">
