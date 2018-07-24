@@ -8,7 +8,8 @@ class Dashboard extends Component {
   constructor() {
     super();
     this.state = {
-      chartData: {}
+      chartData: {},
+      totalExpenses:'',
     };
   }
 
@@ -30,8 +31,10 @@ class Dashboard extends Component {
               amountArr.push(amount[i].avgAmount);
             }
             const amountIntArr = amountArr.map(x => Number.parseInt(x, 10));
+            const totalExpenses = amountIntArr.reduce((a, b) => a + b, 0);
 
             this.setState({
+              totalExpenses: totalExpenses,
               chartData: {
                 labels: [
                   'Rent/Mortgage',
@@ -87,7 +90,7 @@ class Dashboard extends Component {
         <div className="row">
           <div className="col-sm-6 offset-sm-3">
             <h2 className="text-center" id="totals">
-              Expense Totals
+              Total Expenses (${this.state.totalExpenses})
             </h2>
           </div>
         </div>
