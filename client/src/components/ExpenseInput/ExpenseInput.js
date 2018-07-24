@@ -49,7 +49,6 @@ class ExpenseInput extends Component {
     const target = event.target;
     const value = target.value;
     const name = target.name;
-    console.log(target);
 
     this.setState({
       [name]: value
