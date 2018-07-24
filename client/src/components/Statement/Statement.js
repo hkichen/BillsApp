@@ -63,7 +63,7 @@ class Statement extends Component {
       expenses: this.state.expenses
     }
     API.createStmtWithID(this.state.id, data)
-      .then(console.log("created new statement!"))
+      .then(res => {window.location.href="/statementInfo"})
   }
 
   render() {
