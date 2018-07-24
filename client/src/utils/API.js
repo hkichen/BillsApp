@@ -53,5 +53,13 @@ export default {
 
   createStmtWithID: function(expenseId, statementData) {
     return axios.post('api/statements/' + localStorage.getItem('userId') + '/' + expenseId, statementData);
+  },
+
+  getBulkStatments: function(expenseId) {
+    return axios.get('/api/statements/' + localStorage.getItem('userId') + '/' + expenseId)
+  },
+
+  getStatements: function() {
+    return axios.get('/api/statements/' + localStorage.getItem('userId'))
   }
 };
