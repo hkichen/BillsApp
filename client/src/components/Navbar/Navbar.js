@@ -24,7 +24,8 @@ class Navbar extends Component {
       <div>
         <nav className="navbar navbar-expand-lg" id="navbar">
           <Link to="/landing" className="navbar-brand">
-            <img className="logo" src={image} width="26" height="26" alt="" />BILL BUSTER
+            <img className="logo" src={image} width="34" height="34" alt="" />BILL
+            BUSTER
           </Link>
 
           <button
@@ -72,7 +73,7 @@ class Navbar extends Component {
                   className="nav-item log-in-out"
                   onClick={this.login.bind(this)}
                 >
-                  <div className="nav-link">Log In</div>
+                  <div className="nav-link">Log In/Sign Up</div>
                 </li>
               ) : (
                 <li

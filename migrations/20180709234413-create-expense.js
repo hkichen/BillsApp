@@ -20,6 +20,10 @@ module.exports = {
         type: Sequelize.TEXT,
         notEmpty: true
       },
+      userId: {
+        type: Sequelize.TEXT,
+        notEmpty: true
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

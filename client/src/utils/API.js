@@ -13,6 +13,7 @@ export default {
     });
   },
 
+  //request to update metadate to the backend server
   updateMeta: function(data) {
     const url = '/api/users/' + data.sub;
     return axios({
@@ -38,7 +39,28 @@ export default {
   getExpense: function() {
     return axios.get('/api/expense/');
   },
+
   addStatements: function(statementData) {
     return axios.post('/api/statments/', statementData);
+  },
+  getExpenses: function() {
+    return axios.get('/api/expense/' + localStorage.getItem('userId'))
+  },
+
+  //create all expense categories with user id
+  createBulkExpenses: function() {
+    return axios.post('/api/expense/bulk/' + localStorage.getItem('userId'));
+  },
+
+  createStmtWithID: function(expenseId, statementData) {
+    return axios.post('api/statements/' + localStorage.getItem('userId') + '/' + expenseId, statementData);
+  },
+
+  getBulkStatments: function(expenseId) {
+    return axios.get('/api/statements/' + localStorage.getItem('userId') + '/' + expenseId)
+  },
+
+  getStatements: function() {
+    return axios.get('/api/statements/' + localStorage.getItem('userId'))
   }
 };

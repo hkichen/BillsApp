@@ -45,7 +45,6 @@ export default class Auth {
         history.replace('/dashboard');
       } else if (err) {
         history.replace('/landing');
-        console.log(err);
         alert(`Error: ${err.error}. Check the console for further details.`);
       }
     });
@@ -54,6 +53,7 @@ export default class Auth {
   setSession(authResult) {
     // Set the time that the access token will expire at
     let expiresAt = JSON.stringify((authResult.expiresIn * 1000) + new Date().getTime());
+    localStorage.setItem('userId', authResult.idTokenPayload.sub);
     localStorage.setItem('access_token', authResult.accessToken);
     localStorage.setItem('id_token', authResult.idToken);
     localStorage.setItem('expires_at', expiresAt);

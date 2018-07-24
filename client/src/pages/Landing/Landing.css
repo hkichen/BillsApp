@@ -4,7 +4,7 @@ body {
   font-family: 'Exo 2', 'sans-serif';
 }
 .bg-img {
-  position: fixed;
+  background-position: fixed;
   width: 100%;
   height: 100%;
   background: url('../../Images/lg-calculator.jpeg') center center no-repeat;
@@ -33,6 +33,9 @@ body {
   background: rgba(17, 90, 86, 1);
   color: white;
 }
+#log-in {
+  margin-top: 4em;
+}
 .card-body {
   background: rgba(17, 90, 86, 1);
   color: white;
@@ -43,4 +46,31 @@ body {
 }
 .miniLogo {
   margin-bottom: 10px;
+}
+@media (min-width: 320px) and (max-width: 480px) {
+  .bg-img {
+    background-image: none !important;
+  }
+  .bg-img:before {
+    display: block;
+  }
+  .container {
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+      rgba(44, 207, 44, 0.8),
+      rgba(235, 221, 25, 0.8)
+    );
+    margin-bottom: 140px;
+    font-size: 0.8em;
+  }
+  h4 {
+    font-size: 1.25em;
+  }
+  h5 {
+    font-size: 1.25em;
+  }
+  #log-in {
+    margin-top: 1em;
+  }
 }
