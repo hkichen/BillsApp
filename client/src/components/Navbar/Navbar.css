@@ -23,11 +23,20 @@
 @media (min-width: 320px) and (max-width: 480px) {
   .navbar-brand {
     font-family: 'Audiowide', 'cursive';
-    font-size: 1.75em;
+    font-size: 1.5em;
     color: black;
   }
   .logo {
-    height: 28px;
-    width: 28px;
+    height: 24px;
+    width: 24px;
+  }
+
+  .navbar-toggler-icon {
+    max-width: 25px;
+    max-height: 35px;
+  }
+
+  button {
+    margin-top: 0px;
   }
 }

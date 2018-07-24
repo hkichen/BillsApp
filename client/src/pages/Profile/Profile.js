@@ -41,20 +41,24 @@ class Profile extends Component {
             <div className="col-sm-8 offset-sm-2">
               <div className="card text-center">
                 <div className="card-body" id="profile-info">
-                  <img src={profile.picture} alt="profile" id="profile-img" />
+                  <div className="col-sm-6">
+                    <img src={profile.picture} alt="profile" id="profile-img" />
+                  </div>
                   <br />
                   <br />
-                  <h3>
-                    {this.state.metadata.firstName}
-                    &nbsp;
-                    {this.state.metadata.lastName}
-                  </h3>
-                  <h5>Monthly Income: ${this.state.metadata.monthlyIncome} </h5>
-                  <button className=" btn btn-warning btn-lg">
-                    <Link to="/profileform" className="link-text">
-                      Update
-                    </Link>
-                  </button>
+                  <div className="col-sm-6">
+                    <h3>
+                      {this.state.metadata.firstName}
+                      &nbsp;
+                      {this.state.metadata.lastName}
+                    </h3>
+                    <h5>Monthly Income: ${this.state.metadata.monthlyIncome} </h5>
+                    <button className=" btn btn-warning btn-lg">
+                      <Link to="/profileform" className="link-text">
+                        Update
+                      </Link>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
