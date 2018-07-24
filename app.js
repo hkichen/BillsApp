@@ -45,7 +45,7 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 app.use('/api/expense', expense);
 app.use('/api/users', users);
 app.use('/api/statements', statements);
-app.use('/', index);
+app.use('/*', index);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
