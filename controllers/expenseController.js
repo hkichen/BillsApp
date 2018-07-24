@@ -23,7 +23,6 @@ module.exports = {
   },
 
   findByUserID: function(req, res) {
-    console.log(req.params.id)
     Expense.findAll({
       where: {
         userId: req.params.id

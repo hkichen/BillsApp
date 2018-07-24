@@ -23,7 +23,6 @@ class Dashboard extends Component {
               .then(res => this.getChartData())
               .catch(err => res.send(err))
           } else {
-            console.log(res)
             let amount = res.data;
             let i = 0;
             const amountArr = [];
