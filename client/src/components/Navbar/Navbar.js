@@ -41,11 +41,19 @@ class Navbar extends Component {
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
+            {isAuthenticated() ? (
               <li className="nav-item active">
                 <Link to="/profile" className="nav-link">
                   Profile<span className="sr-only">(current)</span>
                 </Link>
               </li>
+              ):(
+                <li className="nav-item active">
+                <div className="nav-link">
+                  Profile<span className="sr-only">(current)</span>
+                </div>
+              </li> 
+              )} 
 
               <li className="nav-item">
                 <Link className="nav-link" to="/dashboard">
