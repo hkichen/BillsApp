@@ -1,3 +1,8 @@
-.form-check-input   {
-    float: left;
+body {
+  background-image: linear-gradient(
+    rgba(44, 207, 44, 0.8),
+    rgba(235, 221, 25, 0.8)
+  );
+  font-family: 'Exo 2', 'sans-serif';
+  margin-bottom: 140px;
 }
