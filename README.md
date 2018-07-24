@@ -74,6 +74,7 @@ Because this project delt with sensitive and private information, we largely foc
 - Landing, Profile, and ProfileForm pages and corresponding components
 - Original app framework design and idea
 - Initial setup of repo structure
+- Api calls for user, expenses, statements
 - Heroku deployment
 
 2. John:  
@@ -83,6 +84,14 @@ Because this project delt with sensitive and private information, we largely foc
 - Final app framework mock-ups (check out the sweet designs in our [docs](https://github.com/hkichen/BillsApp/blob/master/docs/index.md) folder!)
 - API requests to update expenses to database
 - Dashboard and AddExpense pages with corresponding components
+- Statement and Statement Info page 
+
+3. Ryan:
+- Statement Api calls
+- Statement and Statment Info Page
+- Statement info form
+- Document updating
+
 
 ### Components and Tasks
 Each developer handled separate components of the app.
