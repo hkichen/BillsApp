@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import image from '../../Images/folder-icon.png';
+import image from './folder-icon.png';
 import Landing from '../../pages/Landing';
 import('./Navbar.css');
 
