@@ -60,6 +60,29 @@ Because this project delt with sensitive and private information, we largely foc
 - express-jwt-authz
 - jwks-rsa
 
+### Developers
+
+* John Waymire
+* Lina Kichen
+* Ryan McKenzie
+
+1. Lina Kichen 
+- Database set up with mySQL and Sequelize (models, migrations, associations)
+- User authentication and route protection
+- API routes for users, protected routes for App 
+- User controllers 
+- Landing, Profile, and ProfileForm pages and corresponding components
+- Original app framework design and idea
+- Initial setup of repo structure
+- Heroku deployment
+
+2. John:  
+- Overall app styling
+- Front to back-end functionality for updating expenses and building subseqent pie chart
+- Logo design 
+- Final app framework mock-ups (check out the sweet designs in our [docs](https://github.com/hkichen/BillsApp/blob/master/docs/index.md) folder!)
+- API requests to update expenses to database
+- Dashboard and AddExpense pages with corresponding components
 
 ### Components and Tasks
 Each developer handled separate components of the app.
