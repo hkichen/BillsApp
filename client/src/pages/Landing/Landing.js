@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './Landing.css';
-import image from '../../Images/folder-icon.png';
-import './Landing.css';
+import image from './folder-icon.png';
 
 class Landing extends Component {
   render() {
