@@ -25,7 +25,14 @@ class ExpenseInput extends Component {
         API.createBulkExpenses()
           //here we run a recursion by running the getExpense method again, but it will go to the else
           //part because res.data.length is no longer 0
-          .then(res => this.getChartData())
+          .then(res => {
+            this.setState({
+              id: res.data[0].id,
+              description: res.data[0].description,
+              avgAmount: res.data[0].avgAmount,
+              expenses: res.data
+            })
+          })
           .catch(err => res.send(err))
       } else {
         this.setState({
