@@ -8,8 +8,6 @@ class Landing extends Component {
     return (
       <div className="bg-img">
         <div className="container">
-          <br />
-          <br />
           <div className="row">
             <div className="col-sm-8 offset-sm-2">
               <div className="card" id="log-in">
