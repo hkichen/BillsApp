@@ -9,17 +9,36 @@ class Statement extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: '1',
+      id: '',
       description: '',
-      avgAmount: '',
-      moneySource: '',
-      autoPay: '',
-      photo: ''
+      amount: '',
+      moneySource:'',
+      autoPay: false,
+      photo: '',
+      expenses: []
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+
+  componentDidMount() {
+    API.getExpenses()
+    .then(res => {
+      if (res.data.length === 0) {
+        API.createBulkExpenses()
+          //here we run a recursion by running the getExpense method again, but it will go to the else
+          //part because res.data.length is no longer 0
+          .then(res => this.setState({expenses: res.data}))
+          .catch(err => res.send(err))
+      } else {
+        this.setState({
+          id: res.data[0].id,
+          expenses: res.data
+        });
+      }
+    })
+  }  
 
   handleChange(event) {
     const target = event.target;
@@ -32,21 +51,19 @@ class Statement extends Component {
   }
   handleSubmit(event) {
     event.preventDefault();
-    console.log(this.state);
-    
-    const newStatement = {
+    const expense = this.state.expenses.find((expense) => parseInt(expense.id, 10) === parseInt(this.state.id, 10));
+    const data = {
       id: this.state.id,
+      category: expense.category,
       description: this.state.description,
-      avgAmount: this.state.avgAmount,
+      amount: this.state.amount,
       moneySource: this.state.moneySource,
       autoPay: this.state.autoPay,
-      photo: this.state.photo
-    };
-    API.addStatements(newStatement, this.state.id)
-      .then(res =>{
-        console.log("You added " + JSON.stringify(newStatement));
-      })
-      .catch(err => console.log(err));
+      photo: this.state.photo,
+      expenses: this.state.expenses
+    }
+    API.createStmtWithID(this.state.id, data)
+      .then(console.log("created new statement!"))
   }
 
   render() {
@@ -67,24 +84,25 @@ class Statement extends Component {
                 <form onSubmit={this.handleSubmit}>
                   <CustomSelect
                     name="id"
+                    data={this.state.expenses}
                     value={this.state.id}
                     onChange={this.handleChange}
                   />
-                  <label>Bill Name</label>
+                  <label>Statement Description</label>
                   <input
                     className="form-control"
                     name="description"
                     type="text"
                     value={this.state.description}
                     onChange={this.handleChange}
-                    placeholder="Visa, Power Company..."
+                    placeholder="due on the 20th..."
                   />
-                  <label>Bill Amount</label>
+                  <label>Statement Amount</label>
                   <input
                     className="form-control"
-                    name="avgAmount"
-                    type="text"
-                    value={this.state.avgAmount}
+                    name="amount"
+                    type="number"
+                    value={this.state.amount}
                     onChange={this.handleChange}
                     placeholder="00.00"
                   />
@@ -95,7 +113,7 @@ class Statement extends Component {
                     type="text"
                     value={this.state.moneySource}
                     onChange={this.handleChange}
-                    placeholder="Bank/Credit Card"
+                    placeholder="Suntrusk checking account"
                   />
                   <Checkbox
                     id="auto-pay"

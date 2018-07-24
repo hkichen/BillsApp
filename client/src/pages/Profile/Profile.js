@@ -11,24 +11,16 @@ class Profile extends Component {
 
   componentWillMount() {
     this.setState({ profile: {} });
-    const { userProfile, getProfile } = this.props.auth;
-    if (!userProfile) {
-      getProfile((err, profile) => {
-        this.setState({ profile });
-        console.log(profile);
-
-        const subArray = profile.sub.split('|');
-        const sub = subArray[0] + '%7C' + subArray[1];
-
-        API.getMeta(sub)
-          .then(res => {
-            this.setState({ metadata: res.data.user_metadata || {} });
-          })
-          .catch(err => console.log(err));
-      });
-    } else {
-      this.setState({ profile: userProfile });
-    }
+    const { getProfile } = this.props.auth;
+    getProfile((err, profile) => {
+      this.setState({ profile });
+      const sub = profile.sub;
+      API.getMeta(sub)
+        .then(res => {
+          this.setState({ metadata: res.data.user_metadata || {} });
+        })
+        .catch(err => console.log(err));
+    });
   }
 
   render() {
@@ -54,6 +46,7 @@ class Profile extends Component {
                   <br />
                   <h3>
                     {this.state.metadata.firstName}
+                    &nbsp;
                     {this.state.metadata.lastName}
                   </h3>
                   <h5>Monthly Income: ${this.state.metadata.monthlyIncome} </h5>

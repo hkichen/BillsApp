@@ -24,12 +24,15 @@ module.exports = (sequelize, DataTypes) => {
     photo: {
       type: DataTypes.BLOB,
       notEmpty: true
-    }
+    },
+    userId: {
+      type: DataTypes.TEXT,
+      notEmpty: true
+    },
   });
   Statement.associate = function(models) {
     // associations can be defined here
     Statement.belongsTo(models.Expense);
-    Statement.belongsTo(models.User);
   };
   return Statement;
 };
