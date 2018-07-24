@@ -45,7 +45,13 @@ export default {
   getExpenses: function() {
     return axios.get('/api/expense/' + localStorage.getItem('userId'))
   },
+
+  //create all expense categories with user id
   createBulkExpenses: function() {
     return axios.post('/api/expense/bulk/' + localStorage.getItem('userId'));
+  },
+
+  createStmtWithID: function(expenseId, statementData) {
+    return axios.post('api/statements/' + localStorage.getItem('userId') + '/' + expenseId, statementData);
   }
 };
