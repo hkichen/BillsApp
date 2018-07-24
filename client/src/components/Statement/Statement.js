@@ -94,7 +94,7 @@ class Statement extends Component {
                   <label>Paid From Account</label>
                   <input
                     className="form-control"
-                    name="description"
+                    name="moneySource"
                     type="text"
                     value={this.state.moneySource}
                     onChange={this.handleChange}
