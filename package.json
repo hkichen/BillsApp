@@ -1,7 +1,10 @@
 {
   "name": "bills-backend",
-  "version": "8.11.3",
+  "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "8.11.3"
+  },
   "scripts": {
     "start": "set PORT=3001 && node bin/www",
     "client": "cd client && npm start",
