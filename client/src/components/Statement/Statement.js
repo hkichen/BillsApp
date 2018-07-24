@@ -7,7 +7,14 @@ import API from '../../utils/API';
 class Statement extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      id: '1',
+      description: '',
+      avgAmount: '',
+      moneySource: '',
+      autoPay: '',
+      photo: ''
+    };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -24,9 +31,20 @@ class Statement extends Component {
   }
   handleSubmit(event) {
     event.preventDefault();
-
-    API.addStatements()
-      .then(res => {})
+    console.log(this.state);
+    
+    const newStatement = {
+      id: this.state.id,
+      description: this.state.description,
+      avgAmount: this.state.avgAmount,
+      moneySource: this.state.moneySource,
+      autoPay: this.state.autoPay,
+      photo: this.state.photo
+    };
+    API.addStatements(newStatement, this.state.id)
+      .then(res =>{
+        console.log("You added " + JSON.stringify(newStatement));
+      })
       .catch(err => console.log(err));
   }
 
@@ -73,7 +91,7 @@ class Statement extends Component {
                   <label>Paid From Account</label>
                   <input
                     className="form-control"
-                    name="description"
+                    name="moneySource"
                     type="text"
                     value={this.state.moneySource}
                     onChange={this.handleChange}

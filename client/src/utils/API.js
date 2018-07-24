@@ -38,7 +38,9 @@ export default {
   getExpense: function() {
     return axios.get('/api/expense/');
   },
+
   addStatements: function(statementData) {
-    return axios.post('/api/statments/', statementData);
-  }
+    return axios.post("/api/statments/", statementData);
+
+  }  
 };

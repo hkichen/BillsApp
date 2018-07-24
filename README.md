@@ -60,8 +60,8 @@ Because this project delt with sensitive and private information, we largely foc
 - express-jwt-authz
 - jwks-rsa
 
-
 ### Developers
+
 * John Waymire
 * Lina Kichen
 * Ryan McKenzie
@@ -83,7 +83,13 @@ Because this project delt with sensitive and private information, we largely foc
 - Final app framework mock-ups (check out the sweet designs in our [docs](https://github.com/hkichen/BillsApp/blob/master/docs/index.md) folder!)
 - API requests to update expenses to database
 - Dashboard and AddExpense pages with corresponding components
- 
+
+### Components and Tasks
+Each developer handled separate components of the app.
+
+1. Lina: Database set up with mySQL and Sequelize (models, migrations, associations) Landing page with login and signup pages (front to back end functionality), user authentication
+
+2. John:  Home page rendering that displays pie chart, forms for adding/updating bill categories and handling those changes to the database, logo design, app theme
 
 3. Ryan: 
 - creating the interaction inside of each bill category and the add statement form 
@@ -91,7 +97,7 @@ Because this project delt with sensitive and private information, we largely foc
 - setting up functionality to access computer/phone camera to take photos
 - storing images in database
 
-## Features to Include for the Future
+### Future Features
 1. Currently we have predefined bill categories that the user has access to, but we would like to allow users to create their own categories and store specific statements pertenant to it. This is especially useful for our Utilities category, which currenlt stores many types of utility bills. This feature would definitely give the user more control over how they want to store their information. This would also make rendering of the pie chart more accurate as well.
 
 2. Make statements searchable.

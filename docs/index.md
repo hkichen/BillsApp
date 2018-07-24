@@ -17,6 +17,7 @@ Populate folder in page
 Design how statements populate inside designated folder
 Design "add statement" form
 how to access camera and save as input to store in database
+
 Schedule of Completion
 June 26: Brainstorm ideas
 June 28: pitch ideas and vote
@@ -41,6 +42,14 @@ July 3: Deliverable 1 due
 # Deliverable 2
 
 We hit a couple of unrecoverable snags and had to start an entirely new repo and write everything from scratch. 
+
+# Deliverable 3
+
+User authentication has been installed. App is visibly functional with polished front end, and components are working smoothly for the most part.
+
+# Deliverable 4
+
+Components have been improved. Expense and User API routes are working, and are talking to the databases.
 
 ## Trello Board 
 
