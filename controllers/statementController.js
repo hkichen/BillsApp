@@ -3,7 +3,6 @@ const Expense = require('../models').Expense;
 
 module.exports = {
   create: function (req, res) {
-    console.log("is this happening")
     Statement.create({
       category: req.body.category,
       amount: req.body.amount,
@@ -31,6 +30,16 @@ module.exports = {
     })
     .then(dbStatements => res.json(dbStatements))
     .catch(err => res.send(err));
+  },
+
+  statementsForUser: function(req, res) {
+    Statement.findAll({
+      where: {
+        userId: req.params.userId
+      }
+    })
+    .then(statements => res.json(statements))
+    .catch(err => res.send(err))
   },
 
   //create a statement linked to an expense 
