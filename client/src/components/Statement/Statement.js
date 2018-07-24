@@ -20,6 +20,7 @@ class Statement extends Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleCheckbox = this.handleCheckbox.bind(this);
   }
 
   componentDidMount() {
@@ -49,6 +50,11 @@ class Statement extends Component {
       [name]: value
     });
   }
+
+  handleCheckbox(event) {
+    this.setState({autoPay: event.target.checked})
+  }
+
   handleSubmit(event) {
     event.preventDefault();
     const expense = this.state.expenses.find((expense) => parseInt(expense.id, 10) === parseInt(this.state.id, 10));
@@ -119,7 +125,7 @@ class Statement extends Component {
                     id="auto-pay"
                     type="checkbox"
                     value={this.state.autoPay}
-                    onChange={this.handleChange}
+                    onChange={this.handleCheckbox}
                   />
                   <br />
                   <label>Upload Image or File</label>
