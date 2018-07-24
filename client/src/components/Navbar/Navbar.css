@@ -12,13 +12,22 @@
 .navbar-toggler {
   color: white;
 }
-
 .log-in-out:hover {
   background: #00470f;
   cursor: pointer;
 }
-
 .logo {
   margin-bottom: 9px;
   margin-right: 3px;
+}
+@media (min-width: 320px) and (max-width: 480px) {
+  .navbar-brand {
+    font-family: 'Audiowide', 'cursive';
+    font-size: 1.75em;
+    color: black;
+  }
+  .logo {
+    height: 28px;
+    width: 28px;
+  }
 }

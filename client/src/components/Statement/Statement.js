@@ -3,6 +3,7 @@ import { Component } from 'react';
 import CustomSelect from '../CustomSelect';
 import Checkbox from '../CheckBox';
 import API from '../../utils/API';
+import './Statement.css';
 
 class Statement extends Component {
   constructor(props) {
@@ -67,7 +68,7 @@ class Statement extends Component {
 
   render() {
     const { isAuthenticated } = this.props.auth;
-    
+
     return isAuthenticated() ? (
       <div className="container">
         <br />
@@ -76,7 +77,6 @@ class Statement extends Component {
             <h2 className="text-center">Add A Bill Statement</h2>
           </div>
         </div>
-        <br />
         <div className="row">
           <div className="col-sm-8 offset-sm-2">
             <div className="card">
@@ -132,7 +132,6 @@ class Statement extends Component {
                     value={this.state.photo}
                     onChange={this.handleChange}
                   />
-                  <br />
                   <br />
                   <input
                     className="btn btn-warning btn-lg"

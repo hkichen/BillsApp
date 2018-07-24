@@ -1,5 +1,6 @@
 import React from 'react';
 import { Component } from 'react';
+import './StatementInfo.css';
 import API from '../../utils/API';
 
 const StatementSelect = props => {
@@ -82,7 +83,6 @@ class StatementInfo extends Component {
             <h2 className="text-center">View Statements</h2>
           </div>
         </div>
-        <br />
         <div className="row">
           <div className="col-sm-8 offset-sm-2">
             <div className="card">
@@ -108,10 +108,10 @@ class StatementInfo extends Component {
         <br />
         <div className="row">
           <div className="col-sm-8 offset-sm-2">
-            <div className="card">
+            <div className="card" id="statement-card">
               <div className="card-body" id="statement-table">
                 <div className="table-repsponsive-sm">
-                  <table className="table">
+                  <table className="table table-hover">
                     <thead>
                       <tr>
                         <th scope="col">#</th>
