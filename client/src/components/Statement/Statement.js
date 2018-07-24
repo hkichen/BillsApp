@@ -31,7 +31,6 @@ class Statement extends Component {
           .then(res => this.setState({expenses: res.data}))
           .catch(err => res.send(err))
       } else {
-        console.log(res.data)
         this.setState({
           id: res.data[0].id,
           expenses: res.data
