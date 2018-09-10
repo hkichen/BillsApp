@@ -1,6 +1,5 @@
 import React from 'react';
 import { Router, Route } from 'react-router-dom';
-import './App.css';
 import Landing from './pages/Landing';
 import Dashboard from './pages/Dashboard';
 import AddExpense from './pages/AddExpense';
